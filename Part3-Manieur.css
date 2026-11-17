@@ -1,0 +1,11 @@
+#star-platinum:hover {
+    content: url("media/Part3-JotaroKujo.webp");
+    object-fit: contain;
+    min-height: 640.33px;
+}
+
+#hermit-purple:hover {
+    content: url("");
+    object-fit: contain;
+}
+
