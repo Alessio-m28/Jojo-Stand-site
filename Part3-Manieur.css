@@ -19,7 +19,7 @@
     object-fit: contain;   
 }
 
-#Tower-of-gray:hover
+#tower-of-gray:hover
 {
     content: url("media/Part3-GrayFly.png");
     object-fit: contain;   
@@ -46,7 +46,7 @@
 }
 #yellow-temperance:hover
 {
-    content: url("Part3-RubberSoul.png");
+    content: url("media/Part3-RubberSoul.png");
     object-fit: contain;   
 }
 #hanged-man:hover
@@ -96,7 +96,7 @@
 }
 #high-priestess:hover
 {
-    content: url("media/Part3.Midler.png");
+    content: url("media/Part3-Midler.png");
     object-fit: contain;   
 }
 #geb:hover
@@ -154,6 +154,9 @@
     content: url("media/Part3-Dio.png");
     object-fit: contain;   
 }
+
+
+
 
 
 
