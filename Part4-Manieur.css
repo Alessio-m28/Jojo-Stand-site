@@ -75,29 +75,30 @@
     object-fit: contain; 
     height: 710.77px;  
 }
-#empress:hover
+#hermit-purple:hover
 {
-    content: url("media/Part4-Nena.png");
+    content: url("media/Part4-JosephJoestar.webp");
+    object-fit: contain;   
+    height: 710.77px;
+}
+#achtung-baby:hover
+{
+    content: url("media/Part4-ShizukaJoestar.png");
     object-fit: contain;   
 }
-#wheel-of-fortune:hover
+#ratt:hover
 {
-    content: url("media/Part4-ZZ.png");
+    content: url("media/Part4-BugEaten.webp");
     object-fit: contain;   
 }
-#justice:hover
+#harvest:hover
 {
-    content: url("media/Part4-Enya.png");
+    content: url("media/Part4-Shigechi.png");
     object-fit: contain;   
 }
-#lovers:hover
+#cinderella:hover
 {
-    content: url("media/Part4-SteelyDan.png");
-    object-fit: contain;   
-}
-#the-sun:hover
-{
-    content: url("media/Part4-ArabiaFats.png");
+    content: url("media/PArt4-AyaTsuji.png");
     object-fit: contain;   
 }
 #death-thirteen:hover

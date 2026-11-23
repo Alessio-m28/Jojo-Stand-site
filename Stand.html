@@ -1,55 +1,186 @@
-<html>
-    <head>
 
-        <link rel="stylesheet" href="style-stand.css">
-        <style>
-            body {
-                background-image: url("media/acceuil-background.jpg");
-                background-repeat: repeat;
-                background-position: sticky;
-                color: white;
-            }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            h1, h2, p {
-                text-align: center;
-                padding: 10px;
-            }
+    <link rel="stylesheet" href="style-stand.css">
 
+    <style>
+        body {
+            margin: 0;
+            background-image: url("media/acceuil-background.jpg");
+            background-repeat: repeat;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-        </style>
+        header {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: black;
+        }
 
-    </head>
-    <body>
-        <header>
+        header iframe {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 177.78vh;
+            height: 100vh;
+            min-width: 100%;
+            min-height: 56.25vw;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border: none;
+        }
 
-        </header>
-        
-        <main>
+        .header-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.75)
+            );
+        }
 
-            <h1>Les Differents Stand dans Jojo's Bizarre Adventure</h1> 
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            animation: apparition 2s ease;
+        }
+
+        .header-content h1 {
+            font-size: clamp(28px, 5vw, 55px);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #a855f7,
+                         0 0 25px #7c3aed;
+        }
+
+        .header-content p {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        main {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #a855f7;
+            margin-bottom: 35px;
+        }
+
+        .boutons-parties {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px auto;
+        }
+
+        .bouton-partie {
+            text-decoration: none;
+        }
+
+        .bouton-partie button {
+            position: relative;
+            min-width: 150px;
+            padding: 18px 30px;
+            border: 2px solid #b48aff;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #241044,  #55218b, #241044);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 12px #8b5cf6;
+            transition: 0.35s ease;
+        }
+
+        .bouton-partie button:hover {
             
-            <iframe
-                src="https://www.youtube.com/embed/xgWr4cKD4AU?autoplay=1&mute=1&loop=1&playlist=xgWr4cKD4AU&controls=0&disablekb=1&fs=0&modestbranding=1"
-                title="JoJo Golden Wind Opening"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                referrerpolicy="strict-origin-when-cross-origin"
-                tabindex="-1">
-            </iframe>
+            border-color: rgb(134, 11, 206);
+            box-shadow: 0 0 15px #610985, 0 0 35px #8f06ce;
+        }
 
-            
+        .bouton-partie button:active {
+            transform: scale(0.95);
+        }
 
-            <a href="Partie 3.html"><button>Partie 3</button></a>
-            <a href="Partie 4.html"><button>Partie 4</button></a>
-            <a href="Partie 5.html"><button>Partie 5</button></a>
-            <a href="Partie 6.html"><button>Partie 6</button></a>
-            <a href="Partie 7.html"><button>Partie 7</button
+        footer {
+            height: 60px;
+        }
 
-        </main>
-        <footer>
-            
-        </footer>
-    </body>
+    </style>
+</head>
 
+<body>
+
+    <header>
+
+        <iframe
+            src="https://www.youtube.com/embed/xgWr4cKD4AU?autoplay=1&mute=1&loop=1&playlist=xgWr4cKD4AU&controls=0&disablekb=1&fs=0&modestbranding=1"
+            title="JoJo Golden Wind Opening"
+            allow="autoplay; encrypted-media"
+            tabindex="-1">
+        </iframe>
+
+        <div class="header-overlay"></div>
+
+        <div class="header-content">
+            <h1>JOJO'S BIZARRE ADVENTURE</h1>
+            <p>DISCOVER THE WORLD OF STANDS</p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <h2>Les différents Stands dans JoJo's Bizarre Adventure</h2>
+
+        <div class="boutons-parties">
+
+            <a href="Partie 3.html" class="bouton-partie">
+                <button>PARTIE 3</button>
+            </a>
+
+            <a href="Partie 4.html" class="bouton-partie">
+                <button>PARTIE 4</button>
+            </a>
+
+            <a href="Partie 5.html" class="bouton-partie">
+                <button>PARTIE 5</button>
+            </a>
+
+            <a href="Partie 6.html" class="bouton-partie">
+                <button>PARTIE 6</button>
+            </a>
+
+            <a href="Partie 7.html" class="bouton-partie">
+                <button>PARTIE 7</button>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
 </html>
-
