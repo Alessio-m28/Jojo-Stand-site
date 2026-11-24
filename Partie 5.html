@@ -1,298 +1,385 @@
-<html>
-    <Head>
-        <title>Les stands de la partie 5</title>
-        <style>
-            body {
-                text-align: center;
-                background-image: url("media/Part5-Background.png   ");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-                background-position: sticky;
-                color: white;
-            }
 
-            .stand-parent {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            .stand-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                
-                align-items:space-between;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                width: 300px;
-                border: 2px solid white;
-                padding: 10px;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les stands de la partie 5</title>
 
-            }
-            
+    <style>
+        body {
+            text-align: center;
+            background-image: url("media/Part5-Background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .part-title {
+            font-size: 40px;
+            margin: 30px;
+            text-shadow: 2px 2px 8px black;
+        }
+
+        .stand-parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .stand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            border: 2px solid white;
+            border-radius: 15px;
+            width: 380px;
+            min-height: 650px;
+            padding: 15px;
+        }
+
+        .stand-container h2 {
+            min-height: 55px;
+            font-size: 25px;
+            border-bottom: 2px solid white;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .image-transition {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .image-transition img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            left: 0;
+            top: 0;
+            transition: opacity 0.35s;
+        }
+
+        .image-transition img:last-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:first-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:last-child {
+            opacity: 1;
+        }
+
         .stand-description {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid white;
+            width: 100%;
+            line-height: 1.5;
+        }
+
+        .wide-card {
+            flex-basis: 100%;
+            max-width: 1700px;
+            min-height: 600px;
+        }
+
+        .stand-forms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stand-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .stand-form h3 {
+            font-size: 22px;
+        }
+
+        .stand-form .image-transition {
+            height: 350px;
+        }
+
+        .stand-form p {
+            line-height: 1.5;
+        }
+
+        @media (max-width: 750px) {
+            .stand-forms {
+                grid-template-columns: 1fr;
             }
 
-                
-            
+            .wide-card {
+                min-height: auto;
+            }
 
-            
+            .stand-form .image-transition {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
 
-        </style>
-    </Head>
-    <body>
-        <header>
-            <h1>Les stands de la partie 5</h1>
-        </header>
+<body>
 
-        
-        <main>
-            <div class="stand-parent">
+    <h1 class="part-title">JOJO'S BIZARRE ADVENTURE - PART 5</h1>
+    <h2>VENTO AUREO</h2>
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Gold Experience</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-GoldExperience-Photo.png" width="300" height="300" alt="Gold Experience" id="gold-experience">
-                    </div>
-                    <p class="stand-description">Stand de Giorno Giovanna. Transforme les objets inanimés en êtres vivants. Il peut également accélérer les perceptions et renvoyer les dégâts à ceux qui attaquent les formes de vie qu'il crée.</p>
-                </div>
+    <div class="stand-parent">
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Echoes Act 3</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-EchoesAct3-Photo.png" width="300" height="300" alt="Echoes Act 3" id="echoes-act-3">
-                    </div>
-                    <p class="stand-description">Stand de Koichi Hirose. Apparaît brièvement dans la partie 5. Peut prononcer « 3 Freeze » pour augmenter considérablement le poids de sa cible et l'empêcher de bouger.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Sticky Fingers</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-StickyFingers-Photo.png" width="300" height="300" alt="Sticky Fingers" id="sticky-fingers">
-                    </div>
-                    <p class="stand-description">Stand de Bruno Bucciarati. Crée des fermetures éclair sur les surfaces et les objets. Elles lui permettent de les ouvrir, de les séparer ou de créer des passages.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Black Sabbath</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-BlackSabbath-Photo.png" width="300" height="300" alt="Black Sabbath" id="black-sabbath">
-                    </div>
-                    <p class="stand-description">Stand de Polpo. Stand automatique qui se déplace dans les ombres et attaque ceux qui sont exposés à la flamme de son briquet. La lumière du soleil le neutralise.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Moody Blues</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-MoodyBlues-Photo.png" width="300" height="300" alt="Moody Blues" id="moody-blues">
-                    </div>
-                    <p class="stand-description">Stand de Leone Abbacchio. Rejoue fidèlement les événements passés en prenant l'apparence d'une personne présente lors de la scène.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Sex Pistols</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-SexPistols-Photo.png" width="300" height="300" alt="Sex Pistols" id="sex-pistols">
-                    </div>
-                    <p class="stand-description">Stand de Guido Mista. Composé de six petites créatures qui peuvent monter sur les balles de Mista, modifier leur trajectoire et leur donner des coups pour les faire ricocher.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Aerosmith</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-Aerosmith-Photo.png" width="300" height="300" alt="Aerosmith" id="aerosmith">
-                    </div>
-                    <p class="stand-description">Stand de Narancia Ghirga. Prend la forme d'un petit avion équipé de mitrailleuses et de bombes. Son radar détecte les personnes grâce au dioxyde de carbone qu'elles dégagent.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Purple Haze</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-PurpleHaze-Photo.png" width="300" height="300" alt="Purple Haze" id="purple-haze">
-                    </div>
-                    <p class="stand-description">Stand de Pannacotta Fugo. Libère des capsules contenant un virus extrêmement dangereux qui détruit rapidement les tissus vivants. Le virus peut également menacer son propre utilisateur.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Mr. President</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-MrPresident-Photo.png" width="300" height="300" alt="Mr. President" id="mr-president">
-                    </div>
-                    <p class="stand-description">Stand de Coco Jumbo. Sa carapace contient un espace intérieur dans lequel plusieurs personnes peuvent entrer et se déplacer.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Soft Machine</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-SoftMachine-Photo.png" width="300" height="300" alt="Soft Machine" id="soft-machine">
-                    </div>
-                    <p class="stand-description">Stand de Mario Zucchero. Perce ses cibles avec son aiguille et les dégonfle comme des ballons, en réduisant leur volume et leur résistance.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Kraft Work</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-KraftWork-Photo.png" width="300" height="300" alt="Kraft Work" id="kraft-work">
-                    </div>
-                    <p class="stand-description">Stand de Sale. Immobilise l'énergie cinétique d'un objet en le fixant dans l'espace. Il peut aussi accumuler puis relâcher cette énergie.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Little Feet</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-LittleFeet-Photo.png" width="300" height="300" alt="Little Feet" id="little-feet">
-                    </div>
-                    <p class="stand-description">Stand de Formaggio. Réduit progressivement la taille de ce qu'il touche, jusqu'à pouvoir rendre une personne minuscule.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Man in the Mirror</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-ManintheMirror-Photo.png" width="300" height="300" alt="Man in the Mirror" id="man-in-the-mirror">
-                    </div>
-                    <p class="stand-description">Stand d'Illuso. Attire les personnes et les objets dans un monde situé de l'autre côté des miroirs, où il peut contrôler ce qui entre et ce qui reste à l'extérieur.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Beach Boy</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-BeachBoy-Photo.png" width="300" height="300" alt="Beach Boy" id="beach-boy">
-                    </div>
-                    <p class="stand-description">Stand de Pesci. Prend la forme d'une canne à pêche dont le fil et l'hameçon peuvent traverser les obstacles et atteindre directement une cible.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">The Grateful Dead</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-TheGratefulDead-Photo.png" width="300" height="300" alt="The Grateful Dead" id="the-grateful-dead">
-                    </div>
-                    <p class="stand-description">Stand de Prosciutto. Accélère le vieillissement des êtres vivants. Son effet est particulièrement puissant lorsque la température du corps diminue.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Baby Face</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-BabyFace-Photo.png" width="300" height="300" alt="Baby Face" id="baby-face">
-                    </div>
-                    <p class="stand-description">Stand de Melone. Crée un nouvel être à partir d'un échantillon biologique et d'un ordinateur. Cette créature peut découper les objets et les personnes en petits blocs.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">White Album</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-WhiteAlbum-Photo.png" width="300" height="300" alt="White Album" id="white-album">
-                    </div>
-                    <p class="stand-description">Stand de Ghiaccio. Entoure son utilisateur d'une armure de glace et abaisse fortement la température autour de lui. Il peut geler les surfaces et se déplacer sur la glace.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Rolling Stones</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-RollingStones-Photo.png" width="300" height="300" alt="Rolling Stones" id="rolling-stones">
-                    </div>
-                    <p class="stand-description">Stand de Scolippi. Stand automatique prenant la forme d'une pierre. Il repère les personnes destinées à mourir et se dirige vers elles.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Clash</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-Clash-Photo.png" width="300" height="300" alt="Clash" id="clash">
-                    </div>
-                    <p class="stand-description">Stand de Squalo. Prend la forme d'un petit requin capable de se déplacer instantanément entre différentes surfaces contenant de l'eau.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Talking Head</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-TalkingHead-Photo.png" width="300" height="300" alt="Talking Head" id="talking-head">
-                    </div>
-                    <p class="stand-description">Stand de Tizzano. S'accroche à la langue de sa victime et la force à mentir, même lorsqu'elle souhaite dire la vérité.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Notorious B.I.G</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-NotoriousBIG-Photo.png" width="300" height="300" alt="Notorious B.I.G" id="notorious-big">
-                    </div>
-                    <p class="stand-description">Stand de Carne. Après la mort de son utilisateur, devient une créature autonome qui poursuit les objets en mouvement et grandit en les absorbant.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Spice Girl</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-SpiceGirl-Photo.png" width="300" height="300" alt="Spice Girl" id="spice-girl">
-                    </div>
-                    <p class="stand-description">Stand de Trish Una. Assouplit les matériaux qu'elle touche et leur donne une consistance élastique, ce qui leur permet d'absorber les impacts.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Metallica</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-Metallica-Photo.png" width="300" height="300" alt="Metallica" id="metallica">
-                    </div>
-                    <p class="stand-description">Stand de Risotto Nero. Contrôle le fer présent dans son environnement et dans le corps de ses victimes. Il peut créer des objets métalliques à partir du fer extrait.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Green Day</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-GreenDay-Photo.png" width="300" height="300" alt="Green Day" id="green-day">
-                    </div>
-                    <p class="stand-description">Stand de Cioccolata. Produit une moisissure mortelle qui se développe sur les personnes lorsqu'elles se trouvent à une altitude inférieure à leur position précédente.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Oasis</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-Oasis-Photo.png" width="300" height="300" alt="Oasis" id="oasis">
-                    </div>
-                    <p class="stand-description">Stand de Secco. Enveloppe son utilisateur dans une combinaison qui lui permet de transformer le sol et les matières solides en une substance semblable à de la boue.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Silver Chariot</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-SilverChariot-Photo.png" width="300" height="300" alt="Silver Chariot" id="silver-chariot">
-                    </div>
-                    <p class="stand-description">Stand de Jean Pierre Polnareff. Stand de chevalier équipé d'une rapière. Il se distingue par sa vitesse et sa précision au combat.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Chariot Requiem</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-ChariotRequiem-Photo.png" width="300" height="300" alt="Chariot Requiem" id="chariot-requiem">
-                    </div>
-                    <p class="stand-description">Stand de Jean Pierre Polnareff. Évolution de Silver Chariot après son contact avec la flèche. Son pouvoir agit sur les âmes et provoque notamment des échanges de corps.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Gold Experience Requiem</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-GoldExperienceRequiem-Photo.png" width="300" height="300" alt="Gold Experience Requiem" id="gold-experience-requiem">
-                    </div>
-                    <p class="stand-description">Stand de Giorno Giovanna. Évolution de Gold Experience après son contact avec la flèche. Annule les actions et les volontés de ses adversaires en les ramenant à zéro.</p>
-                </div>
-
-                
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">King Crimson</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part5-KingCrimson-Photo.png" width="300" height="300" alt="King Crimson" id="king-crimson">
-                    </div>
-                    <p class="stand-description">Stand de Diavolo. Efface une courte période de temps. Pendant cet intervalle, les autres ne peuvent pas percevoir les événements, tandis que Diavolo peut anticiper le futur proche grâce à Epitaph.</p>
-                </div>
-
+        <div class="stand-container">
+            <h2>Gold Experience</h2>
+            <div class="image-transition">
+                <img src="media/Part5-GoldExperience-Photo.png">
+                <img src="media/Part5-GiornoGiovanna.png">
             </div>
-        </main>
+            <p class="stand-description">Gold Experience permet à Giorno de donner la vie aux objets inanimés. Il peut transformer des objets en animaux ou en plantes et soigner les blessures en créant des parties du corps.</p>
+        </div>
 
-        <footer>
-            <a href="Stand.html"><button>Retour à l'accueil</button></a>
-        </footer>
-    </body>
+        <div class="stand-container">
+            <h2>Sticky Fingers</h2>
+            <div class="image-transition">
+                <img src="media/Part5-StickyFingers-Photo.png">
+                <img src="media/Part5-BrunoBucciarati.png">
+            </div>
+            <p class="stand-description">Sticky Fingers peut créer des fermetures éclair sur presque toutes les surfaces. Bruno peut ainsi ouvrir des passages, séparer des objets ou déplacer des parties de son corps.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Moody Blues</h2>
+            <div class="image-transition">
+                <img src="media/Part5-MoodyBlues-Photo.png">
+                <img src="media/Part5-LeoneAbbacchio.png">
+            </div>
+            <p class="stand-description">Moody Blues peut rejouer les événements passés en reproduisant les actions d'une personne ou d'un objet. Il est particulièrement utile pour retrouver des informations et enquêter.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Sex Pistols</h2>
+            <div class="image-transition">
+                <img src="media/Part5-SexPistols-Photo.png">
+                <img src="media/Part5-GuidoMista.png">
+            </div>
+            <p class="stand-description">Sex Pistols est composé de six petites créatures capables de modifier la trajectoire des balles de Mista. Chaque membre possède sa propre personnalité.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Aerosmith</h2>
+            <div class="image-transition">
+                <img src="media/Part5-Aerosmith-Photo.png">
+                <img src="media/Part5-NaranciaGhirga.png">
+            </div>
+            <p class="stand-description">Aerosmith est un petit avion de combat équipé de mitrailleuses et de bombes. Il peut détecter les personnes grâce au dioxyde de carbone qu'elles rejettent.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Black Sabbath</h2>
+            <div class="image-transition">
+                <img src="media/Part5-BlackSabbath-Photo.png">
+                <img src="media/Part5-Polpo.png">
+            </div>
+            <p class="stand-description">Black Sabbath est un Stand automatique qui se déplace dans les ombres. Il attaque les personnes qui passent son épreuve et utilise une flèche pour éveiller leur potentiel de Stand.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Soft Machine</h2>
+            <div class="image-transition">
+                <img src="media/Part5-SoftMachine-Photo.png">
+                <img src="media/Part5-Zucchero.png">
+            </div>
+            <p class="stand-description">Soft Machine peut transpercer une cible avec son arme et la dégonfler comme un ballon. Il peut ainsi réduire des personnes ou des objets à une forme aplatie.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Kraft Work</h2>
+            <div class="image-transition">
+                <img src="media/Part5-KraftWork-Photo.png">
+                <img src="media/Part5-Sale.png">
+            </div>
+            <p class="stand-description">Kraft Work peut arrêter le mouvement d'un objet en fixant sa position. Sale peut également stocker et libérer l'énergie cinétique accumulée.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Little Feet</h2>
+            <div class="image-transition">
+                <img src="media/Part5-LittleFeet-Photo.png">
+                <img src="media/Part5-Formaggio.png">
+            </div>
+            <p class="stand-description">Little Feet permet de réduire progressivement la taille de ses victimes en les touchant avec son couteau.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Man in the Mirror</h2>
+            <div class="image-transition">
+                <img src="media/Part5-ManInTheMirror-Photo.png">
+                <img src="media/Part5-Illuso.png">
+            </div>
+            <p class="stand-description">Man in the Mirror peut attirer les personnes dans un monde situé de l'autre côté des miroirs. Illuso peut contrôler qui entre dans cette dimension.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Beach Boy</h2>
+            <div class="image-transition">
+                <img src="media/Part5-BeachBoy-Photo.png">
+                <img src="media/Part5-Pesci.png">
+            </div>
+            <p class="stand-description">Beach Boy est une canne à pêche dont le fil et l'hameçon peuvent traverser les objets. Pesci l'utilise pour attraper ses adversaires et atteindre leurs organes.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>The Grateful Dead</h2>
+            <div class="image-transition">
+                <img src="media/Part5-TheGratefulDead-Photo.png">
+                <img src="media/Part5-Prosciutto.png">
+            </div>
+            <p class="stand-description">The Grateful Dead accélère le vieillissement des personnes à proximité. La vitesse de vieillissement dépend notamment de la température corporelle.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Baby Face</h2>
+            <div class="image-transition">
+                <img src="media/Part5-BabyFace-Photo.png">
+                <img src="media/Part5-Melone.png">
+            </div>
+            <p class="stand-description">Baby Face est un Stand créé à partir d'un programme informatique et d'un être humain. Il peut décomposer les personnes et les objets en blocs puis les recomposer.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>White Album</h2>
+            <div class="image-transition">
+                <img src="media/Part5-WhiteAlbum-Photo.png">
+                <img src="media/Part5-Ghiaccio.png">
+            </div>
+            <p class="stand-description">White Album crée une armure de glace extrêmement résistante. Ghiaccio peut geler son environnement et réduire fortement la température autour de lui.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Clash</h2>
+            <div class="image-transition">
+                <img src="media/Part5-Clash-Photo.png">
+                <img src="media/Part5-Squalo.png">
+            </div>
+            <p class="stand-description">Clash prend la forme d'un petit requin capable de se déplacer dans les liquides. Il peut attaquer ses cibles en passant d'une étendue d'eau à une autre.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Talking Head</h2>
+            <div class="image-transition">
+                <img src="media/Part5-TalkingHead-Photo.png">
+                <img src="media/Part5-Tizzano.png">
+            </div>
+            <p class="stand-description">Talking Head se fixe sur la langue de sa victime et la force à mentir. Il rend ainsi la communication et la coordination très difficiles.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Notorious B.I.G</h2>
+            <div class="image-transition">
+                <img src="media/Part5-NotoriousBIG-Photo.png">
+                <img src="media/Part5-Carne.png">
+            </div>
+            <p class="stand-description">Notorious B.I.G est un Stand automatique qui continue d'exister après la mort de son utilisateur. Il poursuit les objets en mouvement et absorbe ce qu'il touche.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Metallica</h2>
+            <div class="image-transition">
+                <img src="media/Part5-Metallica-Photo.png">
+                <img src="media/Part5-RisottoNero.png">
+            </div>
+            <p class="stand-description">Metallica contrôle le fer présent dans son environnement et dans le corps humain. Risotto peut créer des lames et d'autres objets métalliques à partir du fer de ses adversaires.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Green Day</h2>
+            <div class="image-transition">
+                <img src="media/Part5-GreenDay-Photo.png">
+                <img src="media/Part5-Cioccolata.png">
+            </div>
+            <p class="stand-description">Green Day produit une moisissure mortelle qui se développe lorsque les victimes descendent en altitude. Elle peut rapidement décomposer les organismes touchés.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Oasis</h2>
+            <div class="image-transition">
+                <img src="media/Part5-Oasis-Photo.png">
+                <img src="media/Part5-Secco.png">
+            </div>
+            <p class="stand-description">Oasis transforme le sol et les surfaces solides en matière souple semblable à un liquide. Secco peut ainsi se déplacer sous terre et attaquer depuis le sol.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Spice Girl</h2>
+            <div class="image-transition">
+                <img src="media/Part5-SpiceGirl-Photo.png">
+                <img src="media/Part5-TrishUna.png">
+            </div>
+            <p class="stand-description">Spice Girl peut rendre les objets extrêmement souples et élastiques sans les détruire. Trish peut ainsi absorber les impacts et modifier la forme des matériaux.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Mr. President</h2>
+            <div class="image-transition">
+                <img src="media/Part5-MrPresident-Photo.png">
+                <img src="media/Part5-CocoJumbo.png">
+            </div>
+            <p class="stand-description">Mr. President est lié à une tortue nommée Coco Jumbo. Il permet de créer un espace intérieur dans sa carapace, où plusieurs personnes peuvent se réfugier.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>King Crimson</h2>
+            <div class="image-transition">
+                <img src="media/Part5-KingCrimson-Photo.png">
+                <img src="media/Part5-Diavolo.png">
+            </div>
+            <p class="stand-description">King Crimson peut effacer une portion de temps, permettant à Diavolo d'éviter les événements qui se produisent pendant cette période. Son pouvoir secondaire, Epitaph, lui permet de voir le futur proche.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Gold Experience Requiem</h2>
+            <div class="image-transition">
+                <img src="media/Part5-GoldExperienceRequiem-Photo.png">
+                <img src="media/Part5-GiornoGiovanna.png">
+            </div>
+            <p class="stand-description">Gold Experience Requiem possède le pouvoir de ramener les actions et les volontés de ses adversaires à zéro. Il peut empêcher un événement d'atteindre son résultat.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Silver Chariot Requiem</h2>
+            <div class="image-transition">
+                <img src="media/Part5-SilverChariotRequiem-Photo.png">
+                <img src="media/Part5-JeanPierrePolnareff.png">
+            </div>
+            <p class="stand-description">Silver Chariot Requiem est une forme évoluée de Silver Chariot. Son pouvoir affecte les âmes des êtres vivants et peut provoquer leur échange de corps.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Rolling Stones</h2>
+            <div class="image-transition">
+                <img src="media/Part5-RollingStones-Photo.png">
+                <img src="media/Part5-Scolippi.png">
+            </div>
+            <p class="stand-description">Rolling Stones prend la forme d'une pierre qui prédit la mort de certaines personnes. Elle cherche à atteindre les personnes dont la mort est annoncée.</p>
+        </div>
+
+    </div>
+
+</body>
 </html>
