@@ -1,245 +1,342 @@
-<html>
-    <Head>
-        <title>Les stands de la partie 5</title>
-        <style>
-            body {
-                text-align: center;
-                background-image: url("media/Part7-Background.webp");
-                
-                background-attachment: fixed;
-                background-position: sticky;
-                color: white;
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les stands de la partie 7</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url("media/Part7-Background.webp");
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .part-title {
+            font-size: 40px;
+            margin: 30px;
+            text-shadow: 2px 2px 8px black;
+        }
+
+        .stand-parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .stand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            border: 2px solid white;
+            border-radius: 15px;
+            width: 380px;
+            min-height: 650px;
+            padding: 15px;
+        }
+
+        .stand-container h2 {
+            min-height: 55px;
+            font-size: 25px;
+            border-bottom: 2px solid white;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .image-transition {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .image-transition img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            left: 0;
+            top: 0;
+            transition: opacity 0.35s;
+        }
+
+        .image-transition img:last-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:first-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:last-child {
+            opacity: 1;
+        }
+
+        .stand-description {
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid white;
+            width: 100%;
+            line-height: 1.5;
+        }
+
+        .wide-card {
+            flex-basis: 100%;
+            max-width: 1700px;
+            min-height: 600px;
+        }
+
+        .stand-forms {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stand-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .stand-form h3 {
+            font-size: 22px;
+        }
+
+        .stand-form .image-transition {
+            height: 350px;
+        }
+
+        .stand-form p {
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .stand-forms {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 750px) {
+            .stand-forms {
+                grid-template-columns: 1fr;
             }
 
-            .stand-parent {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            .stand-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                
-                align-items:space-between;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                width: 300px;
-                border: 2px solid white;
-                padding: 10px;
-
-            }
-            
-           .stand-description {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
+            .wide-card {
+                min-height: auto;
             }
 
-                
-            
+            .stand-form .image-transition {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
 
-            
+<body>
 
-        </style>
-    </Head>
-    <body>
-        <header>
-            <h1>Les stands de la partie 5</h1>
-        </header>
+    <h1 class="part-title">JOJO'S BIZARRE ADVENTURE - PART 7</h1>
+    <h2>STEEL BALL RUN</h2>
 
-        
-
-        
-<main>
     <div class="stand-parent">
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Tusk</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Tusk-Photo.png" width="300" height="300" alt="Tusk" id="tusk">
+            <h2>Oh! Lonesome Me</h2>
+            <div class="image-transition">
+                <img src="media/Part7-OhLonesomeMe-Photo.png">
+                <img src="media/Part7-MountainTim.png">
             </div>
-            <p class="stand-description">Le Stand de Johnny Joestar. Il utilise les ongles de Johnny comme projectiles rotatifs. Il possède quatre actes, chacun développant ses capacités jusqu'à atteindre une puissance exceptionnelle.</p>
+            <p class="stand-description">Oh! Lonesome Me permet à Mountain Tim de transformer son corps en corde. Il peut séparer certaines parties de son corps et les déplacer à distance.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Ball Breaker</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Ball-Breaker-Photo.png" width="300" height="300" alt="Ball Breaker" id="ball-breaker">
+            <h2>Hey Ya!</h2>
+            <div class="image-transition">
+                <img src="media/Part7-HeyYa-Photo.png">
+                <img src="media/Part7-Pocoloco.png">
             </div>
-            <p class="stand-description">Le Stand associé à Gyro Zeppeli. Il est créé grâce à la technique parfaite de la rotation et peut provoquer un vieillissement accéléré chez ses victimes.</p>
+            <p class="stand-description">Hey Ya! accompagne Pocoloco et lui donne des conseils pour l'encourager. Il l'aide à garder confiance et à prendre des décisions pendant la course.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Oh! Lonesome Me</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Oh-Lonesome-Me-Photo.png" width="300" height="300" alt="Oh! Lonesome Me" id="oh-lonesome-me">
+            <h2>Tomb of the Boom</h2>
+            <div class="image-transition">
+                <img src="media/Part7-TombOfTheBoom-Photo.png">
+                <img src="media/Part7-BoomBoomFamily.png">
             </div>
-            <p class="stand-description">Le Stand de Mountain Tim. Il permet de transformer son corps en corde et de se déplacer à travers celle-ci. Il peut également manipuler les objets reliés à sa corde.</p>
+            <p class="stand-description">Tomb of the Boom est utilisé par les membres de la famille Boom Boom. Il permet de manipuler le fer et d'attirer les objets métalliques vers les blessures des victimes.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Scary Monsters</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Scary-Monsters-Photo.png" width="300" height="300" alt="Scary Monsters" id="scary-monsters">
+            <h2>In a Silent Way</h2>
+            <div class="image-transition">
+                <img src="media/Part7-InASilentWay-Photo.png">
+                <img src="media/Part7-Sandman.png">
             </div>
-            <p class="stand-description">Utilisé par le docteur Ferdinand puis par Diego Brando. Il permet de transformer des êtres vivants en dinosaures et de contrôler ces créatures.</p>
+            <p class="stand-description">In a Silent Way permet de matérialiser des sons sous forme de symboles capables de reproduire leurs effets. Sandman peut utiliser ces sons comme des pièges ou des attaques.</p>
+        </div>
+
+        <div class="stand-container wide-card">
+            <h2>Tusk</h2>
+
+            <div class="stand-forms">
+
+                <div class="stand-form">
+                    <h3>Act 1</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-TuskAct1-Photo.png">
+                        <img src="media/Part7-JohnnyJoestar.png">
+                    </div>
+                    <p>Tusk Act 1 permet à Johnny de tirer ses ongles comme des projectiles en utilisant l'énergie de rotation.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Act 2</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-TuskAct2-Photo.png">
+                        <img src="media/Part7-JohnnyJoestar.png">
+                    </div>
+                    <p>Tusk Act 2 utilise la rotation dorée. Ses projectiles créent des trous qui poursuivent leur cible et traversent les surfaces.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Act 3</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-TuskAct3-Photo.png">
+                        <img src="media/Part7-JohnnyJoestar.png">
+                    </div>
+                    <p>Tusk Act 3 permet à Johnny d'envoyer une partie de son corps dans les trous créés par ses projectiles afin de se déplacer.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Act 4</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-TuskAct4-Photo.png">
+                        <img src="media/Part7-JohnnyJoestar.png">
+                    </div>
+                    <p>Tusk Act 4 est la forme ultime de Tusk. Sa rotation infinie permet de poursuivre une cible même à travers les dimensions.</p>
+                </div>
+
+            </div>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Cream Starter</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Cream-Starter-Photo.png" width="300" height="300" alt="Cream Starter" id="cream-starter">
+            <h2>Scary Monsters</h2>
+            <div class="image-transition">
+                <img src="media/Part7-ScaryMonsters-Photo.png">
+                <img src="media/Part7-DiegoBrando.png">
             </div>
-            <p class="stand-description">Le Stand de Hot Pants. Il produit une substance semblable à de la chair qu'elle peut utiliser pour soigner des blessures, modifier les apparences ou attaquer ses adversaires.</p>
+            <p class="stand-description">Scary Monsters permet de transformer des êtres vivants en dinosaures. Diego peut également prendre lui-même une forme de dinosaure et profiter de ses capacités physiques.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">In a Silent Way</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-In-A-Silent-Way-Photo.png" width="300" height="300" alt="In a Silent Way" id="in-a-silent-way">
+            <h2>Catch the Rainbow</h2>
+            <div class="image-transition">
+                <img src="media/Part7-CatchTheRainbow-Photo.png">
+                <img src="media/Part7-Blackmore.png">
             </div>
-            <p class="stand-description">Le Stand de Sandman. Il transforme les sons en symboles physiques capables de prendre différentes formes et de devenir dangereux pour ses adversaires.</p>
+            <p class="stand-description">Catch the Rainbow permet à Blackmore de manipuler les gouttes de pluie. Il peut les arrêter dans l'air, les utiliser comme plateformes ou les transformer en projectiles.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Hey Ya!</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Hey-Ya-Photo.png" width="300" height="300" alt="Hey Ya!" id="hey-ya">
+            <h2>Wired</h2>
+            <div class="image-transition">
+                <img src="media/Part7-Wired-Photo.png">
+                <img src="media/Part7-PorkPieHatKid.png">
             </div>
-            <p class="stand-description">Le Stand de Pocoloco. Il lui parle et le conseille afin de l'encourager et de l'aider à prendre les bonnes décisions. Il semble surtout lui porter chance.</p>
+            <p class="stand-description">Wired utilise des hameçons reliés à des fils qui peuvent surgir de différentes surfaces. Il permet à son utilisateur d'attraper ses cibles à distance.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Tomb of the Boom</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Tomb-Of-The-Boom-Photo.png" width="300" height="300" alt="Tomb of the Boom" id="tomb-of-the-boom">
+            <h2>20th Century BOY</h2>
+            <div class="image-transition">
+                <img src="media/Part7-20thCenturyBoy-Photo.png">
+                <img src="media/Part7-MagentMagent.png">
             </div>
-            <p class="stand-description">Le Stand utilisé par les trois membres de la famille Boomboom. Il permet de manipuler le magnétisme du fer présent dans le corps humain et d'attirer les objets métalliques.</p>
+            <p class="stand-description">20th Century BOY permet à Magent Magent de se protéger de presque toutes les attaques lorsqu'il adopte une position défensive.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Boku no Rhythm wo Kiitekure</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Boku-No-Rhythm-Wo-Kiitekure-Photo.png" width="300" height="300" alt="Boku no Rhythm wo Kiitekure" id="boku-no-rhythm-wo-kiitekure">
+            <h2>Mandom</h2>
+            <div class="image-transition">
+                <img src="media/Part7-Mandom-Photo.png">
+                <img src="media/Part7-RingoRoadagain.png">
             </div>
-            <p class="stand-description">Le Stand d'Oyecomova. Il permet de placer des bombes sur des objets ou des êtres vivants, qui explosent après un certain délai ou lorsqu'ils sont touchés.</p>
+            <p class="stand-description">Mandom permet à Ringo de remonter le temps de six secondes. Il peut ainsi recommencer une action et modifier le résultat d'une situation.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Wired</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Wired-Photo.png" width="300" height="300" alt="Wired" id="wired">
+            <h2>Ball Breaker</h2>
+            <div class="image-transition">
+                <img src="media/Part7-BallBreaker-Photo.png">
+                <img src="media/Part7-GyroZeppeli.png">
             </div>
-            <p class="stand-description">Le Stand de Pork Pie Hat Kid. Il utilise des hameçons reliés à des fils pour attraper des cibles à distance et les attirer vers lui.</p>
+            <p class="stand-description">Ball Breaker est une manifestation de la rotation parfaite. Il peut transmettre une énergie de rotation extrêmement puissante à ses cibles.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Mandom</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Mandom-Photo.png" width="300" height="300" alt="Mandom" id="mandom">
+            <h2>Ticket to Ride</h2>
+            <div class="image-transition">
+                <img src="media/Part7-TicketToRide-Photo.png">
+                <img src="media/Part7-LucySteel.png">
             </div>
-            <p class="stand-description">Le Stand de Ringo Roadagain. En tournant sa montre, il peut remonter le temps de six secondes, permettant de recommencer une action et de modifier ses choix.</p>
+            <p class="stand-description">Ticket to Ride protège Lucy Steel grâce à une capacité liée aux larmes et à la chance. Il détourne les dangers et les malheurs qui la menacent.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Catch the Rainbow</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Catch-The-Rainbow-Photo.png" width="300" height="300" alt="Catch the Rainbow" id="catch-the-rainbow">
+            <h2>Chocolate Disco</h2>
+            <div class="image-transition">
+                <img src="media/Part7-ChocolateDisco-Photo.png">
+                <img src="media/Part7-DISCO.png">
             </div>
-            <p class="stand-description">Le Stand de Blackmore. Il permet de figer les gouttes de pluie dans l'air, de marcher dessus et de les utiliser comme projectiles tranchants.</p>
+            <p class="stand-description">Chocolate Disco utilise une grille qui permet à son utilisateur de choisir les coordonnées auxquelles des objets ou des attaques apparaissent.</p>
         </div>
 
         <div class="stand-container">
-            <h2 class="stand-contenu">Sugar Mountain</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Sugar-Mountain-Photo.png" width="300" height="300" alt="Sugar Mountain" id="sugar-mountain">
+            <h2>THE WORLD</h2>
+            <div class="image-transition">
+                <img src="media/Part7-TheWorld-Photo.png">
+                <img src="media/Part7-DiegoBrandoAlternate.png">
             </div>
-            <p class="stand-description">Le Stand associé au Grand Arbre de Sugar Mountain. Il propose un échange : celui qui trouve un objet doit en donner un autre de valeur équivalente, sous peine d'être puni.</p>
+            <p class="stand-description">THE WORLD est le Stand du Diego Brando d'une dimension parallèle. Il possède la capacité d'arrêter le temps pendant une courte période.</p>
         </div>
 
-        <div class="stand-container">
-            <h2 class="stand-contenu">TATOO YOU!</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-TATOO-YOU-Photo.png" width="300" height="300" alt="TATOO YOU!" id="tatoo-you">
-            </div>
-            <p class="stand-description">Le Stand des onze hommes. Il leur permet de se déplacer entre les tatouages présents sur leurs corps et de se cacher à l'intérieur de ceux-ci.</p>
-        </div>
+        <div class="stand-container wide-card">
+            <h2>Dirty Deeds Done Dirt Cheap</h2>
 
-        <div class="stand-container">
-            <h2 class="stand-contenu">Tubular Bells</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Tubular-Bells-Photo.png" width="300" height="300" alt="Tubular Bells" id="tubular-bells">
-            </div>
-            <p class="stand-description">Le Stand de Mike O. Il transforme des ballons en animaux métalliques capables de poursuivre des cibles et de les attaquer.</p>
-        </div>
+            <div class="stand-forms">
 
-        <div class="stand-container">
-            <h2 class="stand-contenu">20th Century BOY</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-20th-Century-BOY-Photo.png" width="300" height="300" alt="20th Century BOY" id="20th-century-boy">
-            </div>
-            <p class="stand-description">Le Stand de Magent Magent. Il lui permet de devenir pratiquement invulnérable en se mettant à genoux et en concentrant son énergie dans sa défense. En contrepartie, il ne peut plus bouger.</p>
-        </div>
+                <div class="stand-form">
+                    <h3>D4C</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-D4C-Photo.png">
+                        <img src="media/Part7-FunnyValentine.png">
+                    </div>
+                    <p>D4C permet à Funny Valentine de voyager entre les dimensions parallèles et de faire apparaître des versions alternatives des personnes et des objets.</p>
+                </div>
 
-        <div class="stand-container">
-            <h2 class="stand-contenu">Civil War</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Civil-War-Photo.png" width="300" height="300" alt="Civil War" id="civil-war">
-            </div>
-            <p class="stand-description">Le Stand d'Axl RO. Il fait apparaître les objets et les personnes que ses victimes ont abandonnés ou regrettent d'avoir perdus, puis les utilise pour les attaquer.</p>
-        </div>
+                <div class="stand-form">
+                    <h3>D4C Love Train</h3>
+                    <div class="image-transition">
+                        <img src="media/Part7-D4CLoveTrain-Photo.png">
+                        <img src="media/Part7-FunnyValentine.png">
+                    </div>
+                    <p>Love Train crée une barrière dimensionnelle qui détourne les malheurs et les attaques loin de Funny Valentine.</p>
+                </div>
 
-        <div class="stand-container">
-            <h2 class="stand-contenu">Chocolate Disco</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Chocolate-Disco-Photo.png" width="300" height="300" alt="Chocolate Disco" id="chocolate-disco">
             </div>
-            <p class="stand-description">Le Stand de D-I-S-C-O. Il utilise une grille pour déterminer les coordonnées de ses attaques et envoyer des objets ou des projectiles vers des positions précises.</p>
         </div>
-
-        <div class="stand-container">
-            <h2 class="stand-contenu">Ticket to Ride</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Ticket-To-Ride-Photo.png" width="300" height="300" alt="Ticket to Ride" id="ticket-to-ride">
-            </div>
-            <p class="stand-description">Le Stand de Lucy Steel. Il se manifeste à travers des larmes capables de créer des lames protectrices et de détourner les attaques qui menacent Lucy.</p>
-        </div>
-
-        <div class="stand-container">
-            <h2 class="stand-contenu">THE WORLD</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-The-World-Photo.png" width="300" height="300" alt="THE WORLD" id="the-world">
-            </div>
-            <p class="stand-description">Le Stand de Diego Brando provenant d'un univers parallèle. Il possède la capacité d'arrêter le temps pendant quelques instants, ce qui lui permet d'agir alors que le monde est immobile.</p>
-        </div>
-
-        <div class="stand-container">
-            <h2 class="stand-contenu">Dirty Deeds Done Dirt Cheap</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-Dirty-Deeds-Done-Dirt-Cheap-Photo.png" width="300" height="300" alt="Dirty Deeds Done Dirt Cheap" id="dirty-deeds-done-dirt-cheap">
-            </div>
-            <p class="stand-description">Aussi appelé D4C, c'est le Stand de Funny Valentine. Il lui permet de voyager entre différentes dimensions parallèles et de faire venir des versions alternatives de personnes ou d'objets.</p>
-        </div>
-
-        <div class="stand-container">
-            <h2 class="stand-contenu">D4C Love Train</h2>
-            <div class="stand-contenu">
-                <img src="/media/Part7-D4C-Love-Train-Photo.png" width="300" height="300" alt="D4C Love Train" id="d4c-love-train">
-            </div>
-            <p class="stand-description">Une évolution des capacités de D4C. Love Train crée une barrière dimensionnelle qui détourne les malheurs et les attaques loin de Funny Valentine.</p>
-        </div>
-
-        
 
     </div>
-</main>
 
-
-
-        <footer>
-            <a href="Stand.html"><button>Retour à l'accueil</button></a>
-        </footer>
-    </body>
+</body>
 </html>
