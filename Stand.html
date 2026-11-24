@@ -1,54 +1,70 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style-stand.css">
 
+    <title>JoJo's Bizarre Adventure - Stands</title>
+
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            background-image: url("media/acceuil-background.jpg");
-            background-repeat: repeat;
-            background-position: center;
             color: white;
             font-family: Arial, sans-serif;
+            background: black;
+            min-height: 100vh;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+            width: 100vw;
+            height: 56.25vw;
+
+            min-width: 177.78vh;
+            min-height: 100vh;
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+            border: none;
+
+            z-index: -2;
+        }
+
+        .video-overlay {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
             position: relative;
             height: 450px;
-            overflow: hidden;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             text-align: center;
-            background: black;
-        }
 
-        header iframe {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            width: 177.78vh;
-            height: 100vh;
-            min-width: 100%;
-            min-height: 56.25vw;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            border: none;
-        }
-
-        .header-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(0,0,0,0.35),
-                rgba(0,0,0,0.75)
-            );
+            background: transparent;
+            overflow: hidden;
         }
 
         .header-content {
@@ -62,25 +78,40 @@
             font-size: clamp(28px, 5vw, 55px);
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 0 0 10px #a855f7,
-                         0 0 25px #7c3aed;
+
+            color: #c084fc;
+
+            text-shadow:
+                0 0 10px #491c74,
+                0 0 25px #7c3aed,
+                0 0 40px #9333ea;
         }
 
         .header-content p {
             font-size: 18px;
             letter-spacing: 2px;
+            color: #e9d5ff;
+
+            text-shadow: 0 0 12px #9333ea;
         }
 
         main {
+            position: relative;
+            z-index: 1;
+
             text-align: center;
-            padding: 45px 20px;
+            padding: 45px 20px 70px;
         }
 
         main h2 {
-            font-size: 32px;
+            font-size: clamp(23px, 4vw, 32px);
             text-transform: uppercase;
-            text-shadow: 0 0 10px #a855f7;
-            margin-bottom: 35px;
+
+            text-shadow:
+                0 0 10px #a855f7,
+                0 0 20px #7e22ce;
+
+            margin-bottom: 45px;
         }
 
         .boutons-parties {
@@ -88,63 +119,260 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+
             gap: 25px;
             margin: 30px auto;
+
+            max-width: 1100px;
         }
 
-        .bouton-partie {
+        /*Partie 3*/
+        .bouton-partie-3 {
             text-decoration: none;
         }
-
-        .bouton-partie button {
+        .bouton-partie-3 button {
             position: relative;
-            min-width: 150px;
-            padding: 18px 30px;
-            border: 2px solid #b48aff;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #241044,  #55218b, #241044);
+            min-width: 175px;
+            padding: 20px 32px;
+            border: 2px solid #B7A972;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #57508F, #2D2854, #B7A972);
             color: white;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
             letter-spacing: 2px;
             cursor: pointer;
-            box-shadow: 0 0 12px #8b5cf6;
-            transition: 0.35s ease;
+            box-shadow: 0 0 10px #B7A972, 0 0 25px #5C5330;
+            transition: all 0.3s ease;
         }
 
-        .bouton-partie button:hover {
+        .bouton-partie-3 button:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: linear-gradient( 135deg, #57508F , #2D2854, #B7A972);
+            border-color: #af9e5b;
+            box-shadow: 0 0 15px #B7A972,  0 0 35px #B7A972, 0 0 55px #5C5330;
+        }
+
+        .bouton-partie-3 button:active {
+            transform: scale(0.96);
+        }
+
+        .bouton-partie-3 button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+        /*Partie 4*/
+        .bouton-partie-4 {
+            text-decoration: none;
+        }
+        .bouton-partie-4 button {
+            position: relative;
+            min-width: 175px;
+            padding: 20px 32px;
+            border: 2px solid #F599A3;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #5E8CB8, #31577A, #F599A3);
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #F599A3, 0 0 25px #AD5862;
+            transition: all 0.3s ease;
+        }
+
+        .bouton-partie-4 button:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: linear-gradient( 135deg, #5E8CB8, #31577A, #F599A3);
+            border-color: #F599A3;
+            box-shadow: 0 0 15px #F599A3,  0 0 35px #F599A3, 0 0 55px #AD5862;
+        }
+
+        .bouton-partie-4 button:active {
+            transform: scale(0.96);
+        }
+
+        .bouton-partie-4 button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+        /*Partie 5*/
+        .bouton-partie-5 {
+            text-decoration: none;
+        }
+        .bouton-partie-5 button {
+            position: relative;
+            min-width: 175px;
+            padding: 20px 32px;
+            border: 2px solid #801B5F;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #E15FB6,#D4BA50, #801B5F);
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #801B5F, 0 0 25px #8E7C32;
+            transition: all 0.3s ease;
+        }
+
+        .bouton-partie-5 button:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: linear-gradient( 135deg, #E15FB6,#D4BA50, #801B5F);
+            border-color: #801B5F;
+            box-shadow: 0 0 15px #801B5F,  0 0 35px #D4BA50, 0 0 55px #8E7C32;
+        }
+
+        .bouton-partie-5 button:active {
+            transform: scale(0.96);
+        }
+
+        .bouton-partie-5 button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+        /*Partie 6*/
+        .bouton-partie-6 {
+            text-decoration: none;
+        }
+        .bouton-partie-6 button {
+            position: relative;
+            min-width: 175px;
+            padding: 20px 32px;
+            border: 2px solid #8FAC84;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #2F93AD,#1A5A6B, #8FAC84);
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #8FAC84, 0 0 25px #3B5432;
+            transition: all 0.3s ease;
+        }
+
+        .bouton-partie-6 button:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: linear-gradient( 135deg, #2F93AD,#1A5A6B, #8FAC84);
+            border-color: #8FAC84;
+            box-shadow: 0 0 15px #c1e6b5,  0 0 35px #8FAC84, 0 0 55px #3B5432;
+        }
+
+        .bouton-partie-6 button:active {
+            transform: scale(0.96);
+        }
+
+        .bouton-partie-6 button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+        /*Partie 7*/
+        .bouton-partie-7 {
+            text-decoration: none;
+        }
+        .bouton-partie-7 button {
+            position: relative;
+            min-width: 175px;
+            padding: 20px 32px;
+            border: 2px solid #7A8B54;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #B1844A,#865226, #7A8B54, #7A8B54);
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #7A8B54, 0 0 25px #2B4A32;
+            transition: all 0.3s ease;
+        }
+
+        .bouton-partie-7 button:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: linear-gradient( 135deg, #B1844A,#75451E, #7A8B54, #7A8B54);
+            border-color: #7A8B54;
+            box-shadow: 0 0 15px #7A8B54,  0 0 35px #7A8B54, 0 0 55px #2B4A32;
             
-            border-color: rgb(134, 11, 206);
-            box-shadow: 0 0 15px #610985, 0 0 35px #8f06ce;
         }
 
-        .bouton-partie button:active {
-            transform: scale(0.95);
+        .bouton-partie-7 button:active {
+            transform: scale(0.96);
         }
+
+        .bouton-partie-7 button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+
+
+
 
         footer {
             height: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 350px;
+            }
+
+            .header-content h1 {
+                letter-spacing: 1px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+            }
+
+            .boutons-parties {
+                gap: 18px;
+            }
+
+            .bouton-parties {
+                width: min(100%, 280px);
+            }
+
+            .bouton-partie button {
+                width: 100%;
+                min-width: unset;
+                padding: 18px;
+                font-size: 19px;
+            }
+
         }
 
     </style>
+
 </head>
 
 <body>
+    
+    <iframe
+        class="video-background"
+        src="https://www.youtube.com/embed/xgWr4cKD4AU?autoplay=1&mute=1&loop=1&playlist=xgWr4cKD4AU&controls=0&disablekb=1&fs=0&modestbranding=1"
+        title="JoJo Golden Wind Opening"
+        allow="autoplay; encrypted-media"
+        tabindex="-1">
+    </iframe>
+
+    <div class="video-overlay"></div>
+
 
     <header>
 
-        <iframe
-            src="https://www.youtube.com/embed/xgWr4cKD4AU?autoplay=1&mute=1&loop=1&playlist=xgWr4cKD4AU&controls=0&disablekb=1&fs=0&modestbranding=1"
-            title="JoJo Golden Wind Opening"
-            allow="autoplay; encrypted-media"
-            tabindex="-1">
-        </iframe>
-
-        <div class="header-overlay"></div>
-
         <div class="header-content">
+
             <h1>JOJO'S BIZARRE ADVENTURE</h1>
+
             <p>DISCOVER THE WORLD OF STANDS</p>
+
         </div>
 
     </header>
@@ -155,32 +383,33 @@
 
         <div class="boutons-parties">
 
-            <a href="Partie 3.html" class="bouton-partie">
-                <button>PARTIE 3</button>
+            <a href="Partie 3.html" class="bouton-partie-3">
+                <button type="button">PARTIE 3</button>
             </a>
 
-            <a href="Partie 4.html" class="bouton-partie">
-                <button>PARTIE 4</button>
+            <a href="Partie 4.html" class="bouton-partie-4">
+                <button type="button">PARTIE 4</button>
             </a>
 
-            <a href="Partie 5.html" class="bouton-partie">
-                <button>PARTIE 5</button>
+            <a href="Partie 5.html" class="bouton-partie-5">
+                <button type="button">PARTIE 5</button>
             </a>
 
-            <a href="Partie 6.html" class="bouton-partie">
-                <button>PARTIE 6</button>
+            <a href="Partie 6.html" class="bouton-partie-6">
+                <button type="button">PARTIE 6</button>
             </a>
 
-            <a href="Partie 7.html" class="bouton-partie">
-                <button>PARTIE 7</button>
+            <a href="Partie 7.html" class="bouton-partie-7">
+                <button type="button">PARTIE 7</button>
             </a>
 
         </div>
 
     </main>
-
     <footer>
+
     </footer>
 
 </body>
+
 </html>
