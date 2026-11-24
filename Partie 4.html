@@ -1,321 +1,504 @@
-<html>
-    <Head>
-        <title>Les stands de la partie 4</title>
-        <link rel="stylesheet" href="Part4-Manieur.css">
-        <style>
-            body {
-                text-align: center;
-                background-image: url("media/Part4-Background.png   ");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-                background-position: sticky;
-                color: white;
-            }
 
-            .stand-parent {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            .stand-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                
-                align-items:space-between;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                width: 300px;
-                border: 2px solid white;
-                padding: 10px;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les stands de la partie 4</title>
 
-            }
+    <style>
+        body {
+            text-align: center;
+            background-image: url("media/Part4-Background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
 
-            #no-wrap {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                align-items:space-between;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                width: 88.75%;
-                border: 2px solid white;
-                padding: 10px;
-            }
+        .stand-parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .stand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 380px;
+            min-height: 650px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid white;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .stand-container h2 {
+            width: 100%;
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 10px 0;
+            font-size: 25px;
+            border-bottom: 1px solid white;
+        }
+
+        .image-transition {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            flex-shrink: 0;
+        }
+
+        .image-transition img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.35s ease-in-out;
+        }
+
+        .image-transition img:last-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:first-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:last-child {
+            opacity: 1;
+        }
+
+        .stand-description {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px 0 0 0;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            border-top: 1px solid white;
+        }
+
+        .wide-card {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 1700px;
+            min-height: 600px;
+        }
+
+        .stand-forms {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stand-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-width: 0;
+            padding: 10px;
             
-           .stand-description {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .stand-form h3 {
+            width: 100%;
+            min-height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            margin: 5px 0 10px 0;
+        }
+
+        .stand-form .image-transition {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            flex-shrink: 0;
+        }
+
+        .stand-form .image-transition img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.35s ease-in-out;
+        }
+
+        .stand-form .image-transition img:first-child {
+            opacity: 1;
+        }
+
+        .stand-form .image-transition img:last-child {
+            opacity: 0;
+        }
+
+        .stand-form .image-transition:hover img:first-child {
+            opacity: 0;
+        }
+
+        .stand-form .image-transition:hover img:last-child {
+            opacity: 1;
+        }
+
+        .stand-form p {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 10px 0;
+            padding-top: 10px;
+            
+        }
+
+        .wide-card .stand-description {
+            margin-top: 15px;
+        }
+
+        @media (max-width: 750px) {
+            .stand-forms {
+                grid-template-columns: 1fr;
             }
 
-                
-            
+            .wide-card {
+                min-height: auto;
+            }
 
-            
+            .stand-form .image-transition {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
 
-        </style>
-    </Head>
-    <body>
-        <header>
-            <h1>Les stands de la partie 4</h1>
-        </header>
+<body>
 
-        <main>
-            <div class="stand-parent">
+<header>
+    <h1>Les stands de la partie 4</h1>
+</header>
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Crazy Diamond</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-CrazyDiamond-Photo.png" width="300" alt="Crazy Diamond" id="crazy-diamond">
-                    </div>
-                    <p class="stand-description">Stand de Josuke Higashikata. Répare et restaure les objets ou les êtres vivants en les ramenant à un état antérieur. Il ne peut toutefois pas soigner Josuke lui-même.</p>
-                </div>
+<main>
+    <div class="stand-parent">
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Star Platinum</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-StarPlatinum-Photo.png" width="300" alt="Star Platinum" id="star-platinum">
-                    </div>
-                    <p class="stand-description">Stand de Jotaro Kujo. Possède une force, une vitesse et une précision extraordinaires. Il peut également arrêter le temps.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Aqua Necklace</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-AquaNecklace-Photo.png" width="300" alt="Aqua Necklace" id="aqua-necklace">
-                    </div>
-                    <p class="stand-description">Stand d'Angelo Katagiri. Se transforme en liquide pour se déplacer dans l'eau et infiltrer le corps de ses victimes.</p>
-                </div>
-                
-                <div class="stand-container">
-                    <h2 class="stand-contenu">The Hand</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-TheHand-Photo.png" width="300" alt="The Hand" id="the-hand">
-                    </div>
-                    <p class="stand-description">Stand d'Okuyasu Nijimura. Efface l'espace avec sa main droite ; tout ce qui se trouve dans la zone effacée disparaît.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Bad Company</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-BadCompany-Photo.png" width="300" alt="Bad Company" id="bad-company">
-                    </div>
-                    <p class="stand-description">Stand de Keicho Nijimura. Commande une petite armée de soldats, de chars et d'hélicoptères miniatures lourdement armés.</p>
-                </div>
-
-                <div class="stand-container" id="no-wrap">
-                    <div>
-                        <h2 class="stand-contenu">Echoes act 1</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-EchoesAct1-Photo.png" height="400" alt="Echoes" id="echoes-act1">
-                        </div>
-                         <p class="stand-description">Il peut generer des effets sonores ou des phrases <br>  qui peuvent insinuer une personnes par exemple "crois-en moi" et la personne le croira.</p>
-                    </div>
-
-                    <div>
-                        <h2 class="stand-contenu">Echoes act 2</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-EchoesAct2-Photo.png" height="400" alt="Echoes" id="echoes-act2">
-                        </div> 
-                         <p class="stand-description">Forme plus humanoide de echoes act 1, ces bruitages peuvent avoir un vrai effet au lieu <br> de juste faire du son par exemple produire du vent.</p>
-                    </div>
-
-                    <div>
-                        <h2 class="stand-contenu">Echoes act 3</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-EchoesAct3-Photo.png" height="400" alt="Echoes" id="echoes-act3">
-                        </div>
-                         <p class="stand-description">Crée des ondes infrasonores qui a chaque coups doublent <br>le poids de l'adversaire jusqu'a le plaquer au sol.  </p>
-                        
-                    </div>
-                     <p class="stand-description">Stand de Koichi Hirose. Évolue en plusieurs actes. Il peut notamment matérialiser des sons et appliquer des effets sonores à ses cibles.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Red Hot Chili Pepper</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-RedHotChiliPepper-Photo.png" width="300" alt="Red Hot Chili Pepper" id="red-hot-chili-pepper">
-                    </div>
-                    <p class="stand-description">Stand d'Akira Otoishi. Contrôle l'électricité et se déplace à travers les installations et les câbles électriques.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Heaven's Door</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-HeavensDoor-Photo.webp" width="300" alt="Heaven's Door" id="heavens-door">
-                    </div>
-                    <p class="stand-description">Stand de Rohan Kishibe. Transforme les personnes en livres que Rohan peut lire et modifier en écrivant sur leurs pages.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Love Deluxe</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-LoveDeluxe-Photo.png" width="300" alt="Love Deluxe" id="love-deluxe">
-                    </div>
-                    <p class="stand-description">Stand de Yukako Yamagishi. Permet à Yukako de contrôler ses cheveux, qui peuvent s'allonger et saisir ses adversaires.</p>
-                </div>
-                
-                <div class="stand-container">
-                    <h2 class="stand-contenu">The Lock</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-TheLock-Photo.png" width="300" alt="The Lock" id="the-lock">
-                    </div>
-                    <p class="stand-description">Stand de Tamami Kobayashi. Fait apparaître un cadenas sur le cœur d'une personne, dont le poids augmente avec son sentiment de culpabilité.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Pearl Jam</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-PearlJam-Photo.png" width="300" alt="Pearl Jam" id="pearl-jam">
-                    </div>
-                    <p class="stand-description">Stand de Tonio Trussardi. Intégré aux plats de Tonio, soigne les problèmes physiques de ceux qui les mangent.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Surface</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-Surface-Photo.png" width="300" alt="Surface" id="surface">
-                    </div>
-                    <p class="stand-description">Stand de Toshikazu Hazamada. Prend l'apparence d'une personne et reproduit ses mouvements comme un pantin.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Hermit Purple</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part3-HermitPurple-Photo.png" width="300" alt="Hermit Purple" id="hermit-purple">
-                    </div>
-                    <p class="stand-description">Stand de Joseph Joestar. Produit des lianes épineuses et permet de réaliser des prises de vue psychiques.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Achtung Baby</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-AchtungBaby-Photo.png" width="300" alt="Achtung Baby" id="achtung-baby">
-                    </div>
-                    <p class="stand-description">Stand de Shizuka Joestar. Rend Shizuka et les objets qu'elle touche invisibles, surtout lorsqu'elle est agitée.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Ratt</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-Ratt-Photo.png" width="300" alt="Ratt" id="ratt">
-                    </div>
-                    <p class="stand-description">Stand de Bug-Eaten et Not Bug-Eaten. Deux rats utilisent ce Stand pour tirer des projectiles qui liquéfient progressivement les tissus touchés.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Harvest</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-Harvest-Photo.png" width="300" alt="Harvest" id="harvest">
-                    </div>
-                    <p class="stand-description">Stand de Shigekiyo Yangu. Un essaim de minuscules unités collecte des objets et peut agir sur plusieurs cibles à la fois.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Cinderella</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-Cinderella-Photo.png" width="300" alt="Cinderella" id="cinderella">
-                    </div>
-                    <p class="stand-description">Stand d'Aya Tsuji. Modifie temporairement l'apparence d'une personne, notamment son visage, pour favoriser sa chance en amour.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Atom Heart Father</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-AtomHeartFather-Photo.png" width="300" alt="Atom Heart Father" id="atom-heart-father">
-                    </div>
-                    <p class="stand-description">Stand de Yoshihiro Kira. Permet à Yoshihiro d'agir à travers les photographies et de piéger ceux qui s'y trouvent.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Boy II Man</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-BoyIIMan-Photo.png" width="300" alt="Boy II Man" id="boy-ii-man">
-                    </div>
-                    <p class="stand-description">Stand de Ken Oyanagi. Peut voler une partie de l'énergie d'un Stand après avoir remporté une manche de pierre-feuille-ciseaux.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Earth Wind and Fire</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-EarthWindAndFire-Photo.png" width="300" alt="Earth Wind and Fire" id="earth-wind-and-fire">
-                    </div>
-                    <p class="stand-description">Stand de Mikitaka Hazekura. Mikitaka affirme pouvoir transformer son corps en différents objets. La nature exacte de ce pouvoir reste ambiguë.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Highway Star</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-HighwayStar-Photo.png" width="300" alt="Highway Star" id="highway-star">
-                    </div>
-                    <p class="stand-description">Stand de Yuya Fungami. Crée une illusion de couloir pour attirer ses victimes, puis les poursuit afin d'absorber leurs nutriments.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Stray Cat</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-StrayCat-Photo.png" width="300" alt="Stray Cat" id="stray-cat">
-                    </div>
-                    <p class="stand-description">Stand de Tama. Une plante-chimère capable de contrôler l'air et de créer des bulles d'air comprimé.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Super Fly</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-SuperFly-Photo.png" width="300" alt="Super Fly" id="super-fly">
-                    </div>
-                    <p class="stand-description">Stand de Toyohiro Kanedaichi. Est lié à une tour électrique : toute personne qui y reste enfermée devient prisonnière à son tour.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Enigma</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-Enigma-Photo.png" width="300" alt="Enigma" id="enigma">
-                    </div>
-                    <p class="stand-description">Stand de Terunosuke Miyamoto. Plie les personnes et les objets en feuilles de papier après avoir découvert leur signe de peur.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Cheap Trick</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part4-CheapTrick-Photo.png" width="300" alt="Cheap Trick" id="cheap-trick">
-                    </div>
-                    <p class="stand-description">Stand de Masazo Kinoto. S'accroche au dos de son hôte et tue quiconque regarde ce dos ; il peut ensuite changer d'hôte.</p>
-                </div>
-
-                <div class="stand-container"  id="no-wrap">
-                    <div>
-                        <h2 class="stand-contenu">Killer Queen</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-KillerQueen-Photo.png" height="400" alt="Killer Queen" id="killer-queen">
-                        </div>
-                         <p class="stand-description">Transforme n'importe quel objet en bombe par un contact</p>  
-                    </div>
-    
-                    <div>
-                        <h2 class="stand-contenu">Sheer Heart Attack</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-SheerHeartAttack-Photo.png" height="400" alt="Sheer Heart Attack" id="sheer-heart-attack">
-                        </div>
-                         <p class="stand-description">Une bombe autonome qui suit la chaleur</p>
-                    </div>
-    
-                    <div>
-                        <h2 class="stand-contenu">Bites the Dust</h2>
-                        <div class="stand-contenu">
-                            <img src="/media/Part4-BitesTheDust-Photo.png" height="400" alt="Bites the Dust" id="bites-the-dust">
-                        </div>
-                         <p class="stand-description">Crée une boucle temporelle d'environ une heure</p>
-                    </div>
-                </div>
+        <div class="stand-container">
+            <h2>Crazy Diamond</h2>
+            <div class="image-transition">
+                <img src="media/Part4-CrazyDiamond-Photo.png" alt="Crazy Diamond">
+                <img src="media/Part4-JosukeHigashikata.png" alt="Josuke Higashikata">
             </div>
-        </main>
+            <p class="stand-description">Stand de Josuke Higashikata. Répare et restaure les objets ou les êtres vivants en les ramenant à un état antérieur. Il ne peut toutefois pas soigner Josuke lui-même.</p>
+        </div>
 
-        <footer>
-            <a href="Stand.html"><button>Retour à l'accueil</button></a>
-        </footer>
-    </body>
+        <div class="stand-container">
+            <h2>Star Platinum</h2>
+            <div class="image-transition">
+                <img src="media/Part4-StarPlatinum-Photo.png" alt="Star Platinum">
+                <img src="media/Part4-JotaroKujo.png" alt="Jotaro Kujo">
+            </div>
+            <p class="stand-description">Stand de Jotaro Kujo. Possède une force, une vitesse et une précision extraordinaires. Il peut également arrêter le temps.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Aqua Necklace</h2>
+            <div class="image-transition">
+                <img src="media/Part4-AquaNecklace-Photo.png" alt="Aqua Necklace">
+                <img src="media/Part4-AnjuroKatagiri.webp" alt="Anjuro Katagiri">
+            </div>
+            <p class="stand-description">Stand d'Angelo Katagiri. Se transforme en liquide pour se déplacer dans l'eau et infiltrer le corps de ses victimes.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>The Hand</h2>
+            <div class="image-transition">
+                <img src="media/Part4-TheHand-Photo.png" alt="The Hand">
+                <img src="media/Part4-OkuyasuNijimura.png" alt="Okuyasu Nijimura">
+            </div>
+            <p class="stand-description">Stand d'Okuyasu Nijimura. Efface l'espace avec sa main droite ; tout ce qui se trouve dans la zone effacée disparaît.</p>
+        </div>
+
+        <div class="stand-container wide-card">
+            <div class="stand-forms">
+
+                <div class="stand-form">
+                    <h3>Echoes Act 1</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-EchoesAct1-Photo.png" alt="Echoes Act 1">
+                        <img src="media/Part4-KoichiHirose.png" alt="Koichi Hirose">
+                    </div>
+                    <p>Il peut générer des effets sonores ou des phrases qui influencent les personnes, par exemple « crois-en moi » et la personne le croira.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Echoes Act 2</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-EchoesAct2-Photo.png" alt="Echoes Act 2">
+                        <img src="media/Part4-KoichiHirose1.webp" alt="Koichi Hirose">
+                    </div>
+                    <p>Forme plus humanoïde d'Echoes Act 1. Ses bruitages peuvent avoir un véritable effet physique, par exemple produire du vent.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Echoes Act 3</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-EchoesAct3-Photo.png" alt="Echoes Act 3">
+                        <img src="media/Part4-KoichiHirose2.webp" alt="Koichi Hirose">
+                    </div>
+                    <p>Crée des ondes infrasonores qui, à chaque coup, doublent le poids de l'adversaire jusqu'à le plaquer au sol.</p>
+                </div>
+
+            </div>
+
+            <p class="stand-description">Stand de Koichi Hirose. Évolue en plusieurs actes et développe progressivement ses capacités sonores et physiques.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Bad Company</h2>
+            <div class="image-transition">
+                <img src="media/Part4-BadCompany-Photo.png" alt="Bad Company">
+                <img src="media/Part4-KeichoNijimura.png" alt="Keicho Nijimura">
+            </div>
+            <p class="stand-description">Stand de Keicho Nijimura. Commande une petite armée de soldats, de chars et d'hélicoptères miniatures lourdement armés.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Red Hot Chili Pepper</h2>
+            <div class="image-transition">
+                <img src="media/Part4-RedHotChiliPepper-Photo.png" alt="Red Hot Chili Pepper">
+                <img src="media/Part4-AkiraOtoishi.webp" alt="Akira Otoishi">
+            </div>
+            <p class="stand-description">Stand d'Akira Otoishi. Contrôle l'électricité et se déplace à travers les installations et les câbles électriques.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Heaven's Door</h2>
+            <div class="image-transition">
+                <img src="media/Part4-HeavensDoor-Photo.webp" alt="Heaven's Door">
+                <img src="media/Part4-RohanKishibe.png" alt="Rohan Kishibe">
+            </div>
+            <p class="stand-description">Stand de Rohan Kishibe. Transforme les personnes en livres que Rohan peut lire et modifier en écrivant sur leurs pages.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Love Deluxe</h2>
+            <div class="image-transition">
+                <img src="media/Part4-LoveDeluxe-Photo.png" alt="Love Deluxe">
+                <img src="media/Part4-YukakoYamagishi.png" alt="Yukako Yamagishi">
+            </div>
+            <p class="stand-description">Stand de Yukako Yamagishi. Permet à Yukako de contrôler ses cheveux, qui peuvent s'allonger et saisir ses adversaires.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>The Lock</h2>
+            <div class="image-transition">
+                <img src="media/Part4-TheLock-Photo.png" alt="The Lock">
+                <img src="media/Part4-TamamiKobayashi.png" alt="Tamami Kobayashi">
+            </div>
+            <p class="stand-description">Stand de Tamami Kobayashi. Fait apparaître un cadenas sur le cœur d'une personne, dont le poids augmente avec son sentiment de culpabilité.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Pearl Jam</h2>
+            <div class="image-transition">
+                <img src="media/Part4-PearlJam-Photo.png" alt="Pearl Jam">
+                <img src="media/Part4-TonioTrussardi.webp" alt="Tonio Trussardi">
+            </div>
+            <p class="stand-description">Stand de Tonio Trussardi. Intégré aux plats de Tonio, soigne les problèmes physiques de ceux qui les mangent.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Surface</h2>
+            <div class="image-transition">
+                <img src="media/Part4-Surface-Photo.png" alt="Surface">
+                <img src="media/Part4-ToshikazuHazamada.webp" alt="Toshikazu Hazamada">
+            </div>
+            <p class="stand-description">Stand de Toshikazu Hazamada. Prend l'apparence d'une personne et reproduit ses mouvements comme un pantin.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Hermit Purple</h2>
+            <div class="image-transition">
+                <img src="media/Part3-HermitPurple-Photo.png" alt="Hermit Purple">
+                <img src="media/Part4-JosephJoestar.webp" alt="Joseph Joestar">
+            </div>
+            <p class="stand-description">Stand de Joseph Joestar. Produit des lianes épineuses et permet de réaliser des prises de vue psychiques.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Achtung Baby</h2>
+            <div class="image-transition">
+                <img src="media/Part4-AchtungBaby-Photo.png" alt="Achtung Baby">
+                <img src="media/Part4-ShizukaJoestar.png" alt="Shizuka Joestar">
+            </div>
+            <p class="stand-description">Stand de Shizuka Joestar. Rend Shizuka et les objets qu'elle touche invisibles, surtout lorsqu'elle est agitée.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Ratt</h2>
+            <div class="image-transition">
+                <img src="media/Part4-Ratt-Photo.png" alt="Ratt">
+                <img src="media/Part4-BugEaten.webp" alt="Bug-Eaten">
+            </div>
+            <p class="stand-description">Stand de Bug-Eaten et Not Bug-Eaten. Deux rats utilisent ce Stand pour tirer des projectiles qui liquéfient progressivement les tissus touchés.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Harvest</h2>
+            <div class="image-transition">
+                <img src="media/Part4-Harvest-Photo.png" alt="Harvest">
+                <img src="media/Part4-Shigechi.png" alt="Shigekiyo Yangu">
+            </div>
+            <p class="stand-description">Stand de Shigekiyo Yangu. Un essaim de minuscules unités collecte des objets et peut agir sur plusieurs cibles à la fois.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Cinderella</h2>
+            <div class="image-transition">
+                <img src="media/Part4-Cinderella-Photo.png" alt="Cinderella">
+                <img src="media/Part4-AyaTsuji.png" alt="Aya Tsuji">
+            </div>
+            <p class="stand-description">Stand d'Aya Tsuji. Modifie temporairement l'apparence d'une personne, notamment son visage, pour favoriser sa chance en amour.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Atom Heart Father</h2>
+            <div class="image-transition">
+                <img src="media/Part4-AtomHeartFather-Photo.png" alt="Atom Heart Father">
+                <img src="media/Part4-YoshihiroKira.png" alt="Yoshihiro Kira">
+            </div>
+            <p class="stand-description">Stand de Yoshihiro Kira. Permet à Yoshihiro d'agir à travers les photographies et de piéger ceux qui s'y trouvent.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Boy II Man</h2>
+            <div class="image-transition">
+                <img src="media/Part4-BoyIIMan-Photo.png" alt="Boy II Man">
+                <img src="media/Part4-KenOyanagi.png" alt="Ken Oyanagi">
+            </div>
+            <p class="stand-description">Stand de Ken Oyanagi. Peut voler une partie de l'énergie d'un Stand après avoir remporté une manche de pierre-feuille-ciseaux.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Earth Wind and Fire</h2>
+            <div class="image-transition">
+                <img src="media/Part4-EarthWindAndFire-Photo.png" alt="Earth Wind and Fire">
+                <img src="media/Part4-MikitakaHazekura.png" alt="Mikitaka Hazekura">
+            </div>
+            <p class="stand-description">Stand de Mikitaka Hazekura. Mikitaka affirme pouvoir transformer son corps en différents objets. La nature exacte de ce pouvoir reste ambiguë.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Highway Star</h2>
+            <div class="image-transition">
+                <img src="media/Part4-HighwayStar-Photo.png" alt="Highway Star">
+                <img src="media/Part4-YuyaFungami.png" alt="Yuya Fungami">
+            </div>
+            <p class="stand-description">Stand de Yuya Fungami. Crée une illusion de couloir pour attirer ses victimes, puis les poursuit afin d'absorber leurs nutriments.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Stray Cat</h2>
+            <div class="image-transition">
+                <img src="media/Part4-StrayCat-Photo.png" alt="Stray Cat">
+                <img src="media/Part4-Tama.webp" alt="Tama">
+            </div>
+            <p class="stand-description">Stand de Tama. Une plante-chimère capable de contrôler l'air et de créer des bulles d'air comprimé.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Super Fly</h2>
+            <div class="image-transition">
+                <img src="media/Part4-SuperFly-Photo.png" alt="Super Fly">
+                <img src="media/Part4-Toyohiro.webp" alt="Toyohiro Kanedaichi">
+            </div>
+            <p class="stand-description">Stand de Toyohiro Kanedaichi. Est lié à une tour électrique : toute personne qui y reste enfermée devient prisonnière à son tour.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Enigma</h2>
+            <div class="image-transition">
+                <img src="media/Part4-Enigma-Photo.png" alt="Enigma">
+                <img src="media/Part4-TerunosukeMiyamoto.png" alt="Terunosuke Miyamoto">
+            </div>
+            <p class="stand-description">Stand de Terunosuke Miyamoto. Plie les personnes et les objets en feuilles de papier après avoir découvert leur signe de peur.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Cheap Trick</h2>
+            <div class="image-transition">
+                <img src="media/Part4-CheapTrick-Photo.png" alt="Cheap Trick">
+                <img src="media/Part4-MasazoKinoto.png" alt="Masazo Kinoto">
+            </div>
+            <p class="stand-description">Stand de Masazo Kinoto. S'accroche au dos de son hôte et tue quiconque regarde ce dos ; il peut ensuite changer d'hôte.</p>
+        </div>
+
+        <div class="stand-container wide-card">
+            <div class="stand-forms">
+
+                <div class="stand-form">
+                    <h3>Killer Queen</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-KillerQueen-Photo.png" alt="Killer Queen">
+                        <img src="media/Part4-Kira.webp" alt="Yoshikage Kira">
+                    </div>
+                    <p>Transforme n'importe quel objet touché en bombe capable de provoquer une explosion.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Sheer Heart Attack</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-SheerHeartAttack-Photo.png" alt="Sheer Heart Attack">
+                        <img src="media/Part4-Kira1.webp" alt="Yoshikage Kira">
+                    </div>
+                    <p>Deuxième bombe de Killer Queen. Une bombe autonome qui poursuit les sources de chaleur et explose à leur contact.</p>
+                </div>
+
+                <div class="stand-form">
+                    <h3>Bites the Dust</h3>
+                    <div class="image-transition">
+                        <img src="media/Part4-BitesTheDust-Photo.png" alt="Bites the Dust">
+                        <img src="media/Part4-kira2.webp" alt="Yoshikage Kira">
+                    </div>
+                    <p>Troisième bombe de Killer Queen. Crée une boucle temporelle et élimine les personnes qui découvrent l'identité de Kira.</p>
+                </div>
+
+            </div>
+
+            <p class="stand-description">Stand de Yoshikage Kira. Possède trois capacités explosives différentes qui font de lui un adversaire particulièrement dangereux.</p>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <a href="Stand.html">
+        <button>Retour à l'accueil</button>
+    </a>
+</footer>
+
+</body>
 </html>

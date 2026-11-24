@@ -1,274 +1,366 @@
-<html>
-    <Head>
-        <title>Les stands de la partie 6</title>
-        <style>
-            body {
-                text-align: center;
-                background-image: url("media/Part6-Background.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-                background-position: sticky;
-                color: white;
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les stands de la partie 6</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url("media/Part6-Background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .part-title {
+            font-size: 40px;
+            margin: 30px;
+            text-shadow: 2px 2px 8px black;
+        }
+
+        .stand-parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .stand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            border: 2px solid white;
+            border-radius: 15px;
+            width: 380px;
+            min-height: 650px;
+            padding: 15px;
+        }
+
+        .stand-container h2 {
+            min-height: 55px;
+            font-size: 25px;
+            border-bottom: 2px solid white;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .image-transition {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .image-transition img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            left: 0;
+            top: 0;
+            transition: opacity 0.35s;
+        }
+
+        .image-transition img:last-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:first-child {
+            opacity: 0;
+        }
+
+        .image-transition:hover img:last-child {
+            opacity: 1;
+        }
+
+        .stand-description {
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid white;
+            width: 100%;
+            line-height: 1.5;
+        }
+
+        .wide-card {
+            flex-basis: 100%;
+            max-width: 1700px;
+            min-height: 600px;
+        }
+
+        .stand-forms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .stand-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .stand-form h3 {
+            font-size: 22px;
+        }
+
+        .stand-form .image-transition {
+            height: 350px;
+        }
+
+        .stand-form p {
+            line-height: 1.5;
+        }
+
+        @media (max-width: 750px) {
+            .stand-forms {
+                grid-template-columns: 1fr;
             }
 
-            .stand-parent {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            .stand-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                
-                align-items:space-between;
-                background-color: rgba(0, 0, 0, 0.8);
-                border-radius: 10px;
-                width: 300px;
-                border: 2px solid white;
-                padding: 10px;
-
-            }
-            
-           .stand-description {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
+            .wide-card {
+                min-height: auto;
             }
 
-                
-            
+            .stand-form .image-transition {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
 
-            
+<body>
 
-        </style>
-    </Head>
-    <body>
-        <header>
-            <h1>Les stands de la partie 6</h1>
-        </header>
+    <h1 class="part-title">JOJO'S BIZARRE ADVENTURE - PART 6</h1>
+    <h2>STONE OCEAN</h2>
 
-        
+    <div class="stand-parent">
 
-        <main>
-            <div class="stand-parent">
+        <div class="stand-container">
+            <h2>Stone Free</h2>
+            <div class="image-transition">
+                <img src="media/Part6-StoneFree-Photo.png">
+                <img src="media/Part6-JolyneCujoh.png">
+            </div>
+            <p class="stand-description">Stone Free permet à Jolyne de transformer son corps en fils. Elle peut les utiliser pour s'attacher, écouter à distance, créer des pièges ou combattre ses adversaires.</p>
+        </div>
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Stone Free</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-StoneFree-Photo.png" width="300" height="300" alt="Stone Free" id="stone-free">
+        <div class="stand-container">
+            <h2>Goo Goo Dolls</h2>
+            <div class="image-transition">
+                <img src="media/Part6-GooGooDolls-Photo.png">
+                <img src="media/Part6-Gwess.png">
+            </div>
+            <p class="stand-description">Goo Goo Dolls peut réduire la taille des personnes touchées. Plus la victime s'éloigne de Gwess, plus elle peut être affectée par ce pouvoir.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Manhattan Transfer</h2>
+            <div class="image-transition">
+                <img src="media/Part6-ManhattanTransfer-Photo.png">
+                <img src="media/Part6-JohngalliA.png">
+            </div>
+            <p class="stand-description">Manhattan Transfer détecte les courants d'air et transmet des informations sur les trajectoires. Il aide son utilisateur à réaliser des tirs extrêmement précis.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Highway to Hell</h2>
+            <div class="image-transition">
+                <img src="media/Part6-HighwayToHell-Photo.png">
+                <img src="media/Part6-ThunderMcQueen.png">
+            </div>
+            <p class="stand-description">Highway to Hell permet à son utilisateur de transférer ses blessures et ses actes d'autodestruction à une autre personne.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Marilyn Manson</h2>
+            <div class="image-transition">
+                <img src="media/Part6-MarilynManson-Photo.png">
+                <img src="media/Part6-Miraschon.png">
+            </div>
+            <p class="stand-description">Marilyn Manson est un Stand arbitre qui récupère les objets et l'argent que ses victimes doivent après avoir perdu un pari.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Jumpin' Jack Flash</h2>
+            <div class="image-transition">
+                <img src="media/Part6-JumpinJackFlash-Photo.png">
+                <img src="media/Part6-LangRangler.png">
+            </div>
+            <p class="stand-description">Jumpin' Jack Flash peut supprimer la gravité dans une zone donnée. Les objets et les personnes touchés flottent alors dans un environnement sans gravité.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Foo Fighters</h2>
+            <div class="image-transition">
+                <img src="media/Part6-FooFighters-Photo.png">
+                <img src="media/Part6-FooFighters.png">
+            </div>
+            <p class="stand-description">Foo Fighters est une colonie de plancton contrôlée par une conscience. Elle peut former un corps humain et utiliser l'eau pour se maintenir en vie.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Weather Report</h2>
+            <div class="image-transition">
+                <img src="media/Part6-WeatherReport-Photo.png">
+                <img src="media/Part6-WeatherReportUser.png">
+            </div>
+            <p class="stand-description">Weather Report permet de contrôler les phénomènes météorologiques. Il peut créer des vents violents, de la pluie, de la foudre et d'autres phénomènes atmosphériques.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Kiss</h2>
+            <div class="image-transition">
+                <img src="media/Part6-Kiss-Photo.png">
+                <img src="media/Part6-ErmesCostello.png">
+            </div>
+            <p class="stand-description">Kiss crée des autocollants qui dupliquent les objets sur lesquels ils sont placés. Lorsque l'autocollant est retiré, les deux objets fusionnent et provoquent des dégâts.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Burning Down the House</h2>
+            <div class="image-transition">
+                <img src="media/Part6-BurningDownTheHouse-Photo.png">
+                <img src="media/Part6-EmporioAlnino.png">
+            </div>
+            <p class="stand-description">Burning Down the House permet à Emporio d'interagir avec les objets et les espaces fantômes qui n'existent plus dans le monde réel.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Survivor</h2>
+            <div class="image-transition">
+                <img src="media/Part6-Survivor-Photo.png">
+                <img src="media/Part6-Guccio.png">
+            </div>
+            <p class="stand-description">Survivor influence les émotions agressives des personnes présentes dans une zone. Il pousse les individus à se battre entre eux.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Planet Waves</h2>
+            <div class="image-transition">
+                <img src="media/Part6-PlanetWaves-Photo.png">
+                <img src="media/Part6-VivianoWestwood.png">
+            </div>
+            <p class="stand-description">Planet Waves attire les météorites vers son utilisateur. Celles-ci tombent autour de lui et peuvent attaquer ses adversaires.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Dragon's Dream</h2>
+            <div class="image-transition">
+                <img src="media/Part6-DragonsDream-Photo.png">
+                <img src="media/Part6-Kenzou.png">
+            </div>
+            <p class="stand-description">Dragon's Dream indique les directions favorables et défavorables selon le Feng Shui. Il permet à Kenzou de choisir les meilleurs endroits pour attaquer.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Yo-Yo Ma</h2>
+            <div class="image-transition">
+                <img src="media/Part6-YoYoMa-Photo.png">
+                <img src="media/Part6-DanG.png">
+            </div>
+            <p class="stand-description">Yo-Yo Ma est un Stand automatique qui suit les ordres de son utilisateur. Il peut produire une substance corrosive à partir de sa salive.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Green Green Grass of Home</h2>
+            <div class="image-transition">
+                <img src="media/Part6-GreenGreenGrassOfHome-Photo.png">
+                <img src="media/Part6-GreenBaby.png">
+            </div>
+            <p class="stand-description">Ce Stand crée une zone dans laquelle tout ce qui s'approche de son utilisateur rétrécit progressivement. Il devient presque impossible de l'atteindre.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Jail House Lock</h2>
+            <div class="image-transition">
+                <img src="media/Part6-JailHouseLock-Photo.png">
+                <img src="media/Part6-MiucciaMiuller.png">
+            </div>
+            <p class="stand-description">Jail House Lock limite la mémoire de ses victimes à trois nouvelles informations à la fois. Toute nouvelle information remplace l'une des précédentes.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Bohemian Rhapsody</h2>
+            <div class="image-transition">
+                <img src="media/Part6-BohemianRhapsody-Photo.png">
+                <img src="media/Part6-Ungalo.png">
+            </div>
+            <p class="stand-description">Bohemian Rhapsody donne vie aux personnages fictifs et attire les personnes dans leurs histoires.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Sky High</h2>
+            <div class="image-transition">
+                <img src="media/Part6-SkyHigh-Photo.png">
+                <img src="media/Part6-Rikiel.png">
+            </div>
+            <p class="stand-description">Sky High contrôle de petits organismes appelés rods. Rikiel les utilise pour influencer la température corporelle de ses adversaires.</p>
+        </div>
+
+        <div class="stand-container">
+            <h2>Under World</h2>
+            <div class="image-transition">
+                <img src="media/Part6-UnderWorld-Photo.png">
+                <img src="media/Part6-DonatelloVersus.png">
+            </div>
+            <p class="stand-description">Under World peut faire remonter des événements qui se sont déroulés dans le passé à un endroit précis. Les personnes peuvent être prises dans la reconstitution de ces événements.</p>
+        </div>
+
+        <div class="stand-container wide-card">
+            <h2>Les évolutions de Pucci</h2>
+
+            <div class="stand-forms">
+
+                <div class="stand-form">
+                    <h3>Whitesnake</h3>
+                    <div class="image-transition">
+                        <img src="media/Part6-Whitesnake-Photo.png">
+                        <img src="media/Part6-EnricoPucci.png">
                     </div>
-                    <p class="stand-description">Stand de Jolyne Cujoh. Permet à Jolyne de transformer son corps en fils. Elle peut les utiliser pour se déplacer, espionner, créer des pièges et combattre ses adversaires.</p>
+                    <p>Whitesnake peut extraire les souvenirs et les pouvoirs des personnes sous forme de disques. Ces disques peuvent ensuite être utilisés ou transmis à d'autres personnes.</p>
                 </div>
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Star Platinum</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-StarPlatinum-Photo.png" width="300" height="300" alt="Star Platinum" id="star-platinum">
+                <div class="stand-form">
+                    <h3>C-MOON</h3>
+                    <div class="image-transition">
+                        <img src="media/Part6-CMoon-Photo.png">
+                        <img src="media/Part6-EnricoPucci.png">
                     </div>
-                    <p class="stand-description">Stand de Jotaro Kujo. Possède une force, une vitesse et une précision extraordinaires. Il peut également arrêter le temps pendant quelques secondes.</p>
+                    <p>C-MOON modifie la gravité autour de Pucci et inverse la surface des objets qu'il touche.</p>
                 </div>
 
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Goo Goo Dolls</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-GooGooDolls-Photo.png" width="300" height="300" alt="Goo Goo Dolls" id="goo-goo-dolls">
+                <div class="stand-form">
+                    <h3>Made in Heaven</h3>
+                    <div class="image-transition">
+                        <img src="media/Part6-MadeInHeaven-Photo.png">
+                        <img src="media/Part6-EnricoPucci.png">
                     </div>
-                    <p class="stand-description">Stand de Gwess. Permet de réduire la taille des personnes touchées jusqu'à les rendre minuscules. Gwess peut ainsi contrôler ses victimes comme des poupées.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Manhattan Transfer</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-ManhattanTransfer-Photo.png" width="300" height="300" alt="Manhattan Transfer" id="manhattan-transfer">
-                    </div>
-                    <p class="stand-description">Stand de Johngalli A. Détecte les mouvements de l'air et permet de dévier les trajectoires des balles. Il aide son utilisateur à effectuer des tirs extrêmement précis.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Whitesnake</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-Whitesnake-Photo.png" width="300" height="300" alt="Whitesnake" id="whitesnake">
-                    </div>
-                    <p class="stand-description">Stand d'Enrico Pucci. Peut extraire les souvenirs et les Stands des personnes sous forme de disques appelés DISC. Il peut également manipuler les perceptions et produire une substance corrosive.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Burning Down the House</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-BurningDownTheHouse-Photo.png" width="300" height="300" alt="Burning Down the House" id="burning-down-the-house">
-                    </div>
-                    <p class="stand-description">Stand d'Emporio Alnino. Permet d'interagir avec des objets fantômes et des espaces qui n'existent plus dans le monde réel. Emporio utilise notamment une pièce fantôme pour se cacher.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Kiss</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-Kiss-Photo.png" width="300" height="300" alt="Kiss" id="kiss">
-                    </div>
-                    <p class="stand-description">Stand d'Ermes Costello. Crée des autocollants qui dupliquent les objets sur lesquels ils sont collés. Lorsque les autocollants sont retirés, les copies fusionnent avec les originaux en provoquant des dégâts.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Foo Fighters</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-FooFighters-Photo.png" width="300" height="300" alt="Foo Fighters" id="foo-fighters">
-                    </div>
-                    <p class="stand-description">Stand incarné par une colonie de planctons intelligents appelée F.F. Elle peut contrôler des corps, se déplacer dans l'eau et utiliser des projectiles pour attaquer ou se soigner.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Weather Report</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-WeatherReport-Photo.png" width="300" height="300" alt="Weather Report" id="weather-report">
-                    </div>
-                    <p class="stand-description">Stand de Weather Report. Contrôle les phénomènes météorologiques et peut créer du vent, de la pluie, des éclairs et modifier les conditions atmosphériques.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Diver Down</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-DiverDown-Photo.png" width="300" height="300" alt="Diver Down" id="diver-down">
-                    </div>
-                    <p class="stand-description">Stand de Narciso Anasui. Peut pénétrer dans les objets et les êtres vivants pour modifier leur structure intérieure. Il peut également stocker et libérer de l'énergie cinétique.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Highway to Hell</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-HighwayToHell-Photo.png" width="300" height="300" alt="Highway to Hell" id="highway-to-hell">
-                    </div>
-                    <p class="stand-description">Stand de Thunder McQueen. Reproduit sur sa cible les blessures que son utilisateur s'inflige à lui-même. Il peut ainsi provoquer des blessures mortelles à distance.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Marilyn Manson</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-MarilynManson-Photo.png" width="300" height="300" alt="Marilyn Manson" id="marilyn-manson">
-                    </div>
-                    <p class="stand-description">Stand de Miraschon. Apparaît lorsqu'une personne perd un pari. Il récupère alors les biens et les parties du corps que son adversaire a mis en jeu pour rembourser sa dette.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Jumpin' Jack Flash</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-JumpinJackFlash-Photo.png" width="300" height="300" alt="Jumpin' Jack Flash" id="jumpin-jack-flash">
-                    </div>
-                    <p class="stand-description">Stand de Lang Rangler. Crée un environnement en apesanteur autour de son utilisateur. Il peut également provoquer une décompression qui rend l'air irrespirable.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Limp Bizkit</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-LimpBizkit-Photo.png" width="300" height="300" alt="Limp Bizkit" id="limp-bizkit">
-                    </div>
-                    <p class="stand-description">Stand de Sports Maxx. Rend invisibles les cadavres et leur permet de revenir à la vie sous forme de zombies invisibles capables d'attaquer les êtres vivants.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Survivor</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-Survivor-Photo.png" width="300" height="300" alt="Survivor" id="survivor">
-                    </div>
-                    <p class="stand-description">Stand de Guccio. Influence le système nerveux des personnes et stimule leur agressivité. Les victimes deviennent extrêmement violentes et cherchent à combattre les autres.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Planet Waves</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-PlanetWaves-Photo.png" width="300" height="300" alt="Planet Waves" id="planet-waves">
-                    </div>
-                    <p class="stand-description">Stand de Viviano Westwood. Attire les météorites vers son utilisateur. Les projectiles traversent l'atmosphère et frappent les adversaires avant de disparaître à proximité de Westwood.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Dragon's Dream</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-DragonsDream-Photo.png" width="300" height="300" alt="Dragon's Dream" id="dragons-dream">
-                    </div>
-                    <p class="stand-description">Stand de Kenzou. Utilise le Feng Shui pour déterminer les zones favorables et défavorables. Il indique les endroits où les attaques peuvent être particulièrement efficaces.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Yo-Yo Ma</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-YoYoMa-Photo.png" width="300" height="300" alt="Yo-Yo Ma" id="yo-yo-ma">
-                    </div>
-                    <p class="stand-description">Stand de D an G. Possède une intelligence propre et se montre extrêmement obéissant. Il sécrète une substance corrosive capable de dissoudre progressivement ses victimes.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Green, Green Grass of Home</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-GreenGreenGrassOfHome-Photo.png" width="300" height="300" alt="Green, Green Grass of Home" id="green-green-grass-of-home">
-                    </div>
-                    <p class="stand-description">Stand du Green Baby. Réduit progressivement la taille de tout ce qui s'approche de lui. Plus une personne tente de s'approcher, plus elle devient petite et ne peut jamais atteindre sa cible.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Jail House Lock</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-JailHouseLock-Photo.png" width="300" height="300" alt="Jail House Lock" id="jail-house-lock">
-                    </div>
-                    <p class="stand-description">Stand de Miuccia Miuller. Limite la mémoire de ses victimes à trois nouvelles informations à la fois. Toute nouvelle information remplace une ancienne, empêchant ainsi la victime de mémoriser correctement les événements.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Bohemian Rhapsody</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-BohemianRhapsody-Photo.png" width="300" height="300" alt="Bohemian Rhapsody" id="bohemian-rhapsody">
-                    </div>
-                    <p class="stand-description">Stand d'Ungalo. Donne vie aux personnages fictifs et entraîne les personnes dans leurs histoires. Les victimes peuvent être piégées dans les récits auxquels elles sont associées.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Sky High</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-SkyHigh-Photo.png" width="300" height="300" alt="Sky High" id="sky-high">
-                    </div>
-                    <p class="stand-description">Stand de Rikiel. Contrôle des organismes microscopiques appelés rods. Ces créatures peuvent absorber la chaleur corporelle de leurs victimes et provoquer des troubles physiques importants.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Under World</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-UnderWorld-Photo.png" width="300" height="300" alt="Under World" id="under-world">
-                    </div>
-                    <p class="stand-description">Stand de Donatello Versus. Peut extraire les souvenirs enfouis dans le sol et les transformer en événements réels. Les personnes présentes sont alors contraintes de revivre ces événements.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Heavy Weather</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-HeavyWeather-Photo.png" width="300" height="300" alt="Heavy Weather" id="heavy-weather">
-                    </div>
-                    <p class="stand-description">Capacité spéciale de Weather Report. Utilise les phénomènes météorologiques pour diffuser un effet hypnotique qui transforme les personnes en escargots lorsqu'elles sont exposées à certains arcs-en-ciel.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">C-Moon</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-CMoon-Photo.png" width="300" height="300" alt="C-Moon" id="c-moon">
-                    </div>
-                    <p class="stand-description">Évolution de Whitesnake, utilisée par Enrico Pucci. Contrôle la gravité autour de son utilisateur. Ses coups inversent la gravité à l'intérieur des objets et des êtres vivants, retournant notamment les parties du corps touchées.</p>
-                </div>
-
-                <div class="stand-container">
-                    <h2 class="stand-contenu">Made in Heaven</h2>
-                    <div class="stand-contenu">
-                        <img src="/media/Part6-MadeInHeaven-Photo.png" width="300" height="300" alt="Made in Heaven" id="made-in-heaven">
-                    </div>
-                    <p class="stand-description">Évolution finale du Stand de Pucci. Accélère progressivement le temps dans l'univers entier, jusqu'à provoquer un renouvellement de l'univers et de ses événements.</p>
+                    <p>Made in Heaven accélère le temps dans l'univers jusqu'à provoquer sa fin et la naissance d'un nouvel univers.</p>
                 </div>
 
             </div>
-        </main>
+        </div>
 
+        <div class="stand-container">
+            <h2>Star Platinum</h2>
+            <div class="image-transition">
+                <img src="media/Part6-StarPlatinum-Photo.png">
+                <img src="media/Part6-JotaroKujo.png">
+            </div>
+            <p class="stand-description">Star Platinum possède une force, une vitesse et une précision exceptionnelles. Il peut également arrêter le temps pendant une courte durée.</p>
+        </div>
 
-        <footer>
-            <a href="Stand.html"><button>Retour à l'accueil</button></a>
-        </footer>
-    </body>
+    </div>
+
+</body>
 </html>
