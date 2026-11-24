@@ -348,21 +348,71 @@
 
         }
 
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #youtube-player {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-width: 177.78vh;
+            min-height: 100vh;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #youtube-player {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-width: 177.78vh;
+            min-height: 100vh;
+            transform: translate(-50%, -50%);
+        }
+
+        #youtube-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
     </style>
 
 </head>
 
 <body>
+
     
-    <iframe
-        class="video-background"
-        src="https://www.youtube.com/embed/xgWr4cKD4AU?autoplay=1&mute=1&loop=1&playlist=xgWr4cKD4AU&controls=0&disablekb=1&fs=0&modestbranding=1"
-        title="JoJo Golden Wind Opening"
-        allow="autoplay; encrypted-media"
-        tabindex="-1">
-    </iframe>
+    <div id="background-video">
+        <div id="youtube-player"></div>
+    </div>
 
     <div class="video-overlay"></div>
+
+    
 
 
     <header>
@@ -413,3 +463,59 @@
 </body>
 
 </html>
+
+<script>
+    const openings = [
+        { name: "Sono Chi no Sadame", id: "1ZKAQzGYYSo" },
+        { name: "BLOODY STREAM", id: "e0yrZXSXTSg" },
+        { name: "STAND PROUD", id: "dOQWNEv4_6U" },
+        { name: "End of THE WORLD", id: "fCMDad_YnBg" },
+        { name: "Crazy Noisy Bizarre Town", id: "20m00ohYASw" },
+        { name: "chase", id: "aCmJCQfINVU" },
+        { name: "Great Days", id: "mU3vgXUKeFM" },
+        { name: "Fighting Gold", id: "xgWr4cKD4AU" },
+        { name: "Requiem for a Traitor", id: "6rX1EtxwLbk" },
+        { name: "STONE OCEAN", id: "9l5VL-JM_Ws" },
+        { name: "Heaven's falling down", id: "lr-PmLDr4RU" },
+        { name: "SPIN", id: "6UF_qprQiu0" }
+    ];
+
+    let dernierOpening = -1;
+
+    function choisirOpening() {
+        let index;
+
+        do {
+            index = Math.floor(Math.random() * openings.length);
+        } while (index === dernierOpening);
+
+        dernierOpening = index;
+
+        player.loadVideoById(openings[index].id);
+
+        console.log("Opening : " + openings[index].name);
+    }
+
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player("youtube-player", {
+            playerVars: {
+                autoplay: 1,
+                controls: 0,
+                mute: 1,
+                playsinline: 1
+            },
+            events: {
+                onReady: choisirOpening,
+                onStateChange: function(event) {
+                    if (event.data === YT.PlayerState.ENDED) {
+                        choisirOpening();
+                    }
+                }
+            }
+        });
+    }
+</script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
